@@ -121,7 +121,7 @@ public class TouchInput : MonoBehaviour
                 {
                     if (!TouchList.Contains(obj))
                     {
-                        obj.SendMessage("OnTouchExit",SendMessageOptions.DontRequireReceiver);
+                        obj.SendMessage("OnTouchExit", SendMessageOptions.DontRequireReceiver);
                     }
                 }
             }

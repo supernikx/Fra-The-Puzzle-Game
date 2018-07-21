@@ -8,18 +8,20 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
 
     GameManager gm;
     public static GameObject ItemBeingDragged;
-    private Vector3 StartPosition;
+    public Vector3 StartPosition;
 
     private float StayCounter;
     private bool CanDrag;
     private float StayDelay = 0.5f;
     private bool Backing;
+    private bool PositionSaved;
 
     void Start()
     {
         gm = GameManager.instance;
         CanDrag = false;
         Backing = false;
+        PositionSaved = false;
         StayCounter = 0;
     }
 
@@ -28,6 +30,7 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
         if (!Backing)
         {
             StartPosition = transform.position;
+            PositionSaved = true;
             Debug.Log("Touch " + gameObject.name);
         }
     }
@@ -39,6 +42,7 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
             ItemBeingDragged = null;
             StayCounter = 0f;
             CanDrag = false;
+            PositionSaved = false;
             StartCoroutine(LerpBackToStart());
         }
     }
@@ -47,6 +51,12 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
     {
         #region UnityEditor
 #if UNITY_EDITOR
+        if (!PositionSaved)
+        {
+            StartPosition = transform.position;
+            PositionSaved = true;
+        }
+
         if (!Backing)
         {
             StayCounter += Time.deltaTime;
@@ -67,6 +77,12 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
 
     public void OnTouchStay(Vector2 ScreenPosition)
     {
+        if (!PositionSaved)
+        {
+            StartPosition = transform.position;
+            PositionSaved = true;
+        }
+
         if (!Backing)
         {
             StayCounter += Time.deltaTime;
@@ -97,6 +113,7 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
         ItemBeingDragged = null;
         StayCounter = 0f;
         CanDrag = false;
+        PositionSaved = false;
     }
 
     private IEnumerator LerpBackToStart()
