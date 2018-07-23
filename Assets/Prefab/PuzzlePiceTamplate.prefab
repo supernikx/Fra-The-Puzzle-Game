@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6061ce33132454db763db5785e6ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackSpeed: 1700
+  BackSpeed: 2000
+  StartPosition: {x: 0, y: 0, z: 0}
 --- !u!222 &222536746177968738
 CanvasRenderer:
   m_ObjectHideFlags: 1

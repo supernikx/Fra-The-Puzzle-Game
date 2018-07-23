@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour {
     public bool CheckDistance(Vector2 _PicePosition)
     {
         float distance = Vector2.Distance(_PicePosition, testdistance.position);
-        Debug.Log(distance);
         if (distance <= 0.5f)
         {
             return true;

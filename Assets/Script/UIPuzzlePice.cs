@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UIPuzzlePice : MonoBehaviour, ITouchable
+public class UIPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     public float BackSpeed;
 
@@ -14,88 +15,54 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
     private bool CanDrag;
     private float StayDelay = 0.5f;
     private bool Backing;
-    private bool PositionSaved;
+    private Transform DefaultParent;
 
     void Start()
     {
         gm = GameManager.instance;
         CanDrag = false;
         Backing = false;
-        PositionSaved = false;
         StayCounter = 0;
-    }
-
-    public void OnTouchDown(Vector2 ScreenPosition)
-    {
-        if (!Backing)
-        {
-            StartPosition = transform.position;
-            PositionSaved = true;
-            Debug.Log("Touch " + gameObject.name);
-        }
-    }
-
-    public void OnTouchExit()
-    {
-        if (CanDrag && !Backing)
-        {
-            ItemBeingDragged = null;
-            StayCounter = 0f;
-            CanDrag = false;
-            PositionSaved = false;
-            StartCoroutine(LerpBackToStart());
-        }
-    }
-
-    public void OnTouchMove(Vector2 ScreenPosition)
-    {
-        #region UnityEditor
-#if UNITY_EDITOR
-        if (!PositionSaved)
-        {
-            StartPosition = transform.position;
-            PositionSaved = true;
-        }
-
-        if (!Backing)
-        {
-            StayCounter += Time.deltaTime;
-            if (StayCounter >= StayDelay && ItemBeingDragged == null)
-            {
-                CanDrag = true;
-                ItemBeingDragged = gameObject;
-                GameManager.instance.ui.EnableScroll(false);
-            }
-        }
-#endif
-        #endregion
-        if (CanDrag && !Backing)
-        {
-            transform.position = ScreenPosition;
-        }
     }
 
     public void OnTouchStay(Vector2 ScreenPosition)
     {
-        if (!PositionSaved)
-        {
-            StartPosition = transform.position;
-            PositionSaved = true;
-        }
-
         if (!Backing)
         {
             StayCounter += Time.deltaTime;
             if (StayCounter >= StayDelay && ItemBeingDragged == null)
             {
+                StartPosition = transform.position;
                 CanDrag = true;
-                ItemBeingDragged = gameObject;
-                GameManager.instance.ui.EnableScroll(false);
             }
         }
     }
 
-    public void OnTouchUp(Vector2 ScreenPosition)
+    private IEnumerator LerpBackToStart()
+    {
+        gm.ui.UpDownInventory();
+        Backing = true;
+        float AnimationCounterDuration = 0f;
+        while ((transform.position - StartPosition).sqrMagnitude > 0.01f || AnimationCounterDuration < 0.35f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, StartPosition, Time.deltaTime * BackSpeed);
+            AnimationCounterDuration += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = StartPosition;
+        Backing = false;
+        gm.ui.EnableScroll(true);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (CanDrag && !Backing)
+        {
+            transform.position = Input.mousePosition;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
     {
         if (CanDrag && !Backing)
         {
@@ -113,20 +80,28 @@ public class UIPuzzlePice : MonoBehaviour, ITouchable
         ItemBeingDragged = null;
         StayCounter = 0f;
         CanDrag = false;
-        PositionSaved = false;
     }
 
-    private IEnumerator LerpBackToStart()
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        Backing = true;
-        Vector2 ActualPosition = transform.position;
-        while ((transform.position - StartPosition).sqrMagnitude > 0.01f)
+        if (CanDrag)
         {
-            transform.position = Vector2.MoveTowards(transform.position, StartPosition, Time.deltaTime * BackSpeed);
-            yield return null;
+            ItemBeingDragged = gameObject;
+            gm.ui.EnableScroll(false);
+            gm.ui.UpDownInventory();
         }
-        transform.position = StartPosition;
-        Backing = false;
-        gm.ui.EnableScroll(true);
+    }
+
+    private void OnMouseDrag()
+    {
+        if (!Backing)
+        {
+            StayCounter += Time.deltaTime;
+            if (StayCounter >= StayDelay && ItemBeingDragged == null)
+            {
+                StartPosition = transform.position;
+                CanDrag = true;
+            }
+        }
     }
 }

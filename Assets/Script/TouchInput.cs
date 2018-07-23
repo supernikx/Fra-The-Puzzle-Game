@@ -50,7 +50,7 @@ public class TouchInput : MonoBehaviour
                 }
                 if (Input.GetMouseButton(0))
                 {
-                    recipient.SendMessage("OnTouchMove", results[resultindex].screenPosition, SendMessageOptions.DontRequireReceiver);
+                    recipient.SendMessage("OnTouchStay", results[resultindex].screenPosition, SendMessageOptions.DontRequireReceiver);
                 }
                 if (Input.GetMouseButtonUp(0))
                 {
@@ -93,6 +93,7 @@ public class TouchInput : MonoBehaviour
                         break;
                     }
                 }
+
                 if (recipient != null)
                 {
                     TouchList.Add(recipient);
