@@ -7,7 +7,7 @@ public class UIPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandler, IBegin
 {
     public float BackSpeed;
 
-    GameManager gm;
+    PuzzlePiceManager gm;
     public static GameObject ItemBeingDragged;
     public Vector3 StartPosition;
 
@@ -19,7 +19,7 @@ public class UIPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandler, IBegin
 
     void Start()
     {
-        gm = GameManager.instance;
+        gm = PuzzlePiceManager.instance;
         CanDrag = false;
         Backing = false;
         StayCounter = 0;

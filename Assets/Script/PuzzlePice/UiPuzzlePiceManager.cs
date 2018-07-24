@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UiManager : MonoBehaviour {
-
+public class UiPuzzlePiceManager : MonoBehaviour {
+    [Header("Puzzle Pice")]
     [Header("Inventory References")]
-    public ScrollRect InventoryRect;    
-    public Button InventoryRectButton;    
+    public ScrollRect InventoryRect;
+    public Button InventoryRectButton;
     private Animator InventoryRectAnimator;
     private bool InventoryDown;
 
@@ -17,7 +17,7 @@ public class UiManager : MonoBehaviour {
         InventoryDown = false;
     }
 
-    public void EnableScroll (bool active)
+    public void EnableScroll(bool active)
     {
         InventoryRect.horizontal = active;
     }
@@ -43,4 +43,5 @@ public class UiManager : MonoBehaviour {
         yield return new WaitForSecondsRealtime(0.35f);
         InventoryRectButton.interactable = true;
     }
+
 }

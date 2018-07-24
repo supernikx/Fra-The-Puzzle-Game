@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-    public static GameManager instance;
-    [HideInInspector]
-    public UiManager ui;
+public class PuzzlePiceManager : MonoBehaviour {
 
+    public static PuzzlePiceManager instance;
+    [HideInInspector]
+    public UiPuzzlePiceManager ui;
     public Transform testdistance;
 
     private void Awake()
     {
         instance = this;
-        ui = GetComponent<UiManager>();
+    }
+
+    private void Start()
+    {
+        ui = GetComponent<UiPuzzlePiceManager>();
     }
 
     public bool CheckDistance(Vector2 _PicePosition)
