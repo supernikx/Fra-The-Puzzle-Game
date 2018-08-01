@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuzzlePiceManager : MonoBehaviour {
+public class DragAndDropPuzzleGameManager : MonoBehaviour {
 
-    public static PuzzlePiceManager instance;
+    public static DragAndDropPuzzleGameManager instance;
     [HideInInspector]
-    public UiPuzzlePiceManager ui;
+    public DragAndDropPuzzleUIManager ui;
     public Transform testdistance;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class PuzzlePiceManager : MonoBehaviour {
 
     private void Start()
     {
-        ui = GetComponent<UiPuzzlePiceManager>();
+        ui = GetComponent<DragAndDropPuzzleUIManager>();
     }
 
     public bool CheckDistance(Vector2 _PicePosition)

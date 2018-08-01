@@ -3,29 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class PuzzlePiceData
+public class SlidingPuzzlePiceData
 {
     public Sprite PiceSprite;
     public GameObject gameObject;
     public Coordinates RightPosition;
     public Coordinates ActualPosition;
+    public bool InvisiblePice;
 
-    public PuzzlePiceData(Sprite _sprite, GameObject _gameObject, Coordinates _right)
+    public SlidingPuzzlePiceData(Sprite _sprite, GameObject _gameObject, Coordinates _right)
     {
         PiceSprite = _sprite;
         gameObject = _gameObject;
         RightPosition = _right;
+        InvisiblePice = false;
     }
 }
 
-public class PuzzlePice : MonoBehaviour {
+public class SlidingPuzzlePice : MonoBehaviour {
 
-    public PuzzlePiceData data;
+    public SlidingPuzzlePiceData data;
 
     private void OnMouseDown()
     {
         Debug.Log(data.RightPosition.X + " " + data.RightPosition.Y);
-        PuzzleSquareManager.instance.PicePressed(data);
+        SlidingPuzzleManager.instance.CheckIfCanMove(data);
     }
 
     public bool CheckPosition()

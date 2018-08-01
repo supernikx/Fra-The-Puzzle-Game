@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ViewportUi : MonoBehaviour{
+public class DragAndDropPuzzleViewportUi : MonoBehaviour{
 
     public List<Sprite> PuzzlePices = new List<Sprite>();
     public GameObject PuzzlePicePrefab;

@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 796878178}
   - component: {fileID: 796878177}
   m_Layer: 0
-  m_Name: PuzzlePiceManager
+  m_Name: DragAndDropPuzzlePiceManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

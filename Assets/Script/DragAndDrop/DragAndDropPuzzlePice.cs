@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class DragAndDropPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     public float BackSpeed;
 
-    PuzzlePiceManager gm;
+    DragAndDropPuzzleGameManager gm;
     public static GameObject ItemBeingDragged;
     public Vector3 StartPosition;
 
@@ -19,7 +19,7 @@ public class UIPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandler, IBegin
 
     void Start()
     {
-        gm = PuzzlePiceManager.instance;
+        gm = DragAndDropPuzzleGameManager.instance;
         CanDrag = false;
         Backing = false;
         StayCounter = 0;

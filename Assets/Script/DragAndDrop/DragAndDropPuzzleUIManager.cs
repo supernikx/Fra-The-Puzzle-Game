@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UiPuzzlePiceManager : MonoBehaviour {
+public class DragAndDropPuzzleUIManager : MonoBehaviour {
     [Header("Puzzle Pice")]
     [Header("Inventory References")]
     public ScrollRect InventoryRect;
