@@ -1,32 +1,16 @@
 fileFormatVersion: 2
-guid: b0f9e6148cbcd5946b688ec2ad9e2c27
+guid: bd355ca304025f643b65477543ac73d9
 TextureImporter:
   fileIDToRecycleName:
-    21300000: images_0
-    21300002: images_1
-    21300004: images_2
-    21300006: images_3
-    21300008: images_4
-    21300010: images_5
-    21300012: images_6
-    21300014: images_7
-    21300016: images_8
-    21300018: images_9
-    21300020: images_10
-    21300022: images_11
-    21300024: images_12
-    21300026: images_13
-    21300028: images_14
-    21300030: images_15
-    21300032: images_16
-    21300034: images_17
-    21300036: images_18
-    21300038: images_19
-    21300040: images_20
-    21300042: images_21
-    21300044: images_22
-    21300046: images_23
-    21300048: images_24
+    21300000: TEST puzzle FRA 1 1080x1920_0
+    21300002: TEST puzzle FRA 1 1080x1920_1
+    21300004: TEST puzzle FRA 1 1080x1920_2
+    21300006: TEST puzzle FRA 1 1080x1920_3
+    21300008: TEST puzzle FRA 1 1080x1920_4
+    21300010: TEST puzzle FRA 1 1080x1920_5
+    21300012: TEST puzzle FRA 1 1080x1920_6
+    21300014: TEST puzzle FRA 1 1080x1920_7
+    21300016: TEST puzzle FRA 1 1080x1920_8
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -120,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: images_0
+      name: TEST puzzle FRA 1 1080x1920_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 56
-        height: 100
+        y: 1280
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,19 +118,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db25ad2c4870b264c98217629dcebce7
+      spriteID: c5872a07425c966448b3d8b0c250e68d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_1
+      name: TEST puzzle FRA 1 1080x1920_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 200
-        width: 56
-        height: 100
+        x: 360
+        y: 1280
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,19 +138,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1087b863ffff1f34eba17132ffaa9cdb
+      spriteID: 8cec1bb02f6db7a429a3006e3f091ae5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_2
+      name: TEST puzzle FRA 1 1080x1920_2
       rect:
         serializedVersion: 2
-        x: 112
-        y: 200
-        width: 56
-        height: 100
+        x: 720
+        y: 1280
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c412a2df9a58c0d40b551f493ddaafac
+      spriteID: f3d8db34e7e29a746bdf6a53eff5001a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_3
+      name: TEST puzzle FRA 1 1080x1920_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
-        width: 56
-        height: 100
+        y: 640
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,19 +178,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9209e5b795b247743979c553040e3ece
+      spriteID: cd9ad53d9bd97b44ca02d7441ccb57d2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_4
+      name: TEST puzzle FRA 1 1080x1920_4
       rect:
         serializedVersion: 2
-        x: 56
-        y: 100
-        width: 56
-        height: 100
+        x: 360
+        y: 640
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,19 +198,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa51d3021eddafa47a2c9b16e7cad856
+      spriteID: b9b4ae6ea82dfa646905cc2a0320defa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_5
+      name: TEST puzzle FRA 1 1080x1920_5
       rect:
         serializedVersion: 2
-        x: 112
-        y: 100
-        width: 56
-        height: 100
+        x: 720
+        y: 640
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,19 +218,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61fd484a0102d764e8aaaa07d8b82950
+      spriteID: b569b0a08f905c343bcfa28cb470c46b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_6
+      name: TEST puzzle FRA 1 1080x1920_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 56
-        height: 100
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,19 +238,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f227c4c65c715fa4fb0e08261edbe200
+      spriteID: b6f28488497574d4fa59325e8ca73db7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_7
+      name: TEST puzzle FRA 1 1080x1920_7
       rect:
         serializedVersion: 2
-        x: 56
+        x: 360
         y: 0
-        width: 56
-        height: 100
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,19 +258,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e891bd4baeaaf7543be692ed7a3a3307
+      spriteID: 2628003f3dd0d3740a5e2e01378fe4fa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: images_8
+      name: TEST puzzle FRA 1 1080x1920_8
       rect:
         serializedVersion: 2
-        x: 112
+        x: 720
         y: 0
-        width: 56
-        height: 100
+        width: 360
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,7 +278,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aec58a198fe1b7f40948c36a6927a574
+      spriteID: 1c75121de1a854e44a4d623e05f0c8cc
       vertices: []
       indices: 
       edges: []
@@ -302,7 +286,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 24a746ebcb227944c8743bc0f8c625fd
+    spriteID: b63b23e88c58c414c810991ad2ce2d86
     vertices: []
     indices: 
     edges: []

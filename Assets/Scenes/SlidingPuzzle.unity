@@ -476,7 +476,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -637,11 +637,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4527736926323544, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.72
+      value: -1.8712552
       objectReference: {fileID: 0}
     - target: {fileID: 4527736926323544, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.13
+      value: 3.3331218
       objectReference: {fileID: 0}
     - target: {fileID: 4527736926323544, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -649,15 +649,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4527736926323544, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4527736926323544, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4527736926323544, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4527736926323544, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
       propertyPath: m_LocalRotation.w
@@ -667,11 +667,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1396405307266256, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a58fec7ac8dfc49a760ae68c3aafb1, type: 2}
   m_IsPrefabAsset: 0
