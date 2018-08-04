@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Main Menu.unity
+    guid: 934ac8de8b810884d9fb59fee27361b7
+  - enabled: 1
+    path: Assets/Scenes/Play Menu.unity
     guid: 30d0afe02aa12ef4aa17751add0cfd0d
   - enabled: 1
-    path: Assets/Scenes/PuzzlePice.unity
+    path: Assets/Scenes/DragAndDropPuzzle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/PuzzleSquare.unity
+    path: Assets/Scenes/SlidingPuzzle.unity
     guid: ba41611a80e2c2e45bba98d49d82bf43
   m_configObjects: {}
