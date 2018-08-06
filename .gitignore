@@ -32,7 +32,6 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-*.apk
 *.unitypackage
 Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
 Assets/TextMesh Pro/Sprites/EmojiOne.png
