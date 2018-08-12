@@ -370,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 7
   ImageCenter: {fileID: 224761450893515224}
+  spriteTendina: {fileID: 21300004, guid: 21c89154ded864748a7f23a7c2da6045, type: 3}
   isFilled: 0
 --- !u!114 &114018747361962654
 MonoBehaviour:
@@ -438,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   ImageCenter: {fileID: 224526261822270468}
+  spriteTendina: {fileID: 21300000, guid: 532be0228dfd6444b86697e4f3e25b6c, type: 3}
   isFilled: 0
 --- !u!114 &114166572151268124
 MonoBehaviour:
@@ -479,6 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   ImageCenter: {fileID: 224913417338198622}
+  spriteTendina: {fileID: 21300000, guid: fbf6cb6e40852b24fa19802e7b5edc26, type: 3}
   isFilled: 0
 --- !u!114 &114318462104474374
 MonoBehaviour:
@@ -493,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   ImageCenter: {fileID: 224709691911748040}
+  spriteTendina: {fileID: 21300000, guid: d0f84765edaaea74fad8e3c05129be89, type: 3}
   isFilled: 0
 --- !u!114 &114368328673773888
 MonoBehaviour:
@@ -507,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   ImageCenter: {fileID: 224065015618087542}
+  spriteTendina: {fileID: 21300004, guid: abfcd73f87e1a5946a683dfbb8e42e13, type: 3}
   isFilled: 0
 --- !u!114 &114372747106439498
 MonoBehaviour:
@@ -521,6 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   ImageCenter: {fileID: 224232117419068676}
+  spriteTendina: {fileID: 21300000, guid: b49e8acdab5e02744bc7971e834a925c, type: 3}
   isFilled: 0
 --- !u!114 &114486825296550924
 MonoBehaviour:
@@ -616,6 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 9
   ImageCenter: {fileID: 224215864240855084}
+  spriteTendina: {fileID: 21300006, guid: 9f0c8e286a055504580eaf29be9811cf, type: 3}
   isFilled: 0
 --- !u!114 &114783776012283370
 MonoBehaviour:
@@ -684,6 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   ImageCenter: {fileID: 224214133392049340}
+  spriteTendina: {fileID: 21300000, guid: 84f98c0fc0c89174bbe0e0e11bf5122d, type: 3}
   isFilled: 0
 --- !u!114 &114835548469380870
 MonoBehaviour:
@@ -725,6 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   ImageCenter: {fileID: 224434283960161816}
+  spriteTendina: {fileID: 21300000, guid: 629fbd82546d8aa4c846e857a62b9a95, type: 3}
   isFilled: 0
 --- !u!114 &114901734538778108
 MonoBehaviour:
@@ -766,6 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   ImageCenter: {fileID: 224442908166277878}
+  spriteTendina: {fileID: 21300000, guid: 58ec3556821abdd43b5b32c0334cade8, type: 3}
   isFilled: 0
 --- !u!222 &222213973886000978
 CanvasRenderer:

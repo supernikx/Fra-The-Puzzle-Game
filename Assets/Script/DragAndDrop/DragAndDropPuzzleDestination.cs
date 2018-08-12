@@ -5,6 +5,7 @@ public class DragAndDropPuzzleDestination : MonoBehaviour {
 
     public int ID;
     public Transform ImageCenter;
+    public Sprite spriteTendina;
 
     public bool isFilled = false;
 

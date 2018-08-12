@@ -1,0 +1,1339 @@
+fileFormatVersion: 2
+guid: 21c89154ded864748a7f23a7c2da6045
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Puzzle 1 Maschera 8 Tendina_0
+    21300002: Puzzle 1 Maschera 8 Tendina_1
+    21300004: Puzzle 1 Maschera 8 Tendina_2
+    21300006: Puzzle 1 Maschera 8 Tendina_3
+    21300008: Puzzle 1 Maschera 8 Tendina_5
+    21300010: Puzzle 1 Maschera 8 Tendina_6
+    21300012: Puzzle 1 Maschera 8 Tendina_7
+    21300014: Puzzle 1 Maschera 8 Tendina_8
+    21300016: Puzzle 1 Maschera 8 Tendina_9
+    21300018: Puzzle 1 Maschera 8 Tendina_11
+    21300020: Puzzle 1 Maschera 8 Tendina_12
+    21300022: Puzzle 1 Maschera 8 Tendina_13
+    21300024: Puzzle 1 Maschera 8 Tendina_14
+    21300026: Puzzle 1 Maschera 8 Tendina_15
+    21300028: Puzzle 1 Maschera 8 Tendina_16
+    21300030: Puzzle 1 Maschera 8 Tendina_17
+    21300032: Puzzle 1 Maschera 8 Tendina_18
+    21300034: Puzzle 1 Maschera 8 Tendina_19
+    21300036: Puzzle 1 Maschera 8 Tendina_20
+    21300038: Puzzle 1 Maschera 8 Tendina_21
+    21300040: Puzzle 1 Maschera 8 Tendina_22
+    21300042: Puzzle 1 Maschera 8 Tendina_23
+    21300044: Puzzle 1 Maschera 8 Tendina_24
+    21300046: Puzzle 1 Maschera 8 Tendina_25
+    21300048: Puzzle 1 Maschera 8 Tendina_26
+    21300050: Puzzle 1 Maschera 8 Tendina_27
+    21300052: Puzzle 1 Maschera 8 Tendina_29
+    21300054: Puzzle 1 Maschera 8 Tendina_30
+    21300056: Puzzle 1 Maschera 8 Tendina_31
+    21300058: Puzzle 1 Maschera 8 Tendina_32
+    21300060: Puzzle 1 Maschera 8 Tendina_33
+    21300062: Puzzle 1 Maschera 8 Tendina_34
+    21300064: Puzzle 1 Maschera 8 Tendina_35
+    21300066: Puzzle 1 Maschera 8 Tendina_36
+    21300068: Puzzle 1 Maschera 8 Tendina_37
+    21300070: Puzzle 1 Maschera 8 Tendina_38
+    21300072: Puzzle 1 Maschera 8 Tendina_39
+    21300074: Puzzle 1 Maschera 8 Tendina_40
+    21300076: Puzzle 1 Maschera 8 Tendina_41
+    21300078: Puzzle 1 Maschera 8 Tendina_42
+    21300080: Puzzle 1 Maschera 8 Tendina_43
+    21300082: Puzzle 1 Maschera 8 Tendina_44
+    21300084: Puzzle 1 Maschera 8 Tendina_45
+    21300086: Puzzle 1 Maschera 8 Tendina_46
+    21300088: Puzzle 1 Maschera 8 Tendina_47
+    21300090: Puzzle 1 Maschera 8 Tendina_48
+    21300092: Puzzle 1 Maschera 8 Tendina_49
+    21300094: Puzzle 1 Maschera 8 Tendina_50
+    21300096: Puzzle 1 Maschera 8 Tendina_51
+    21300098: Puzzle 1 Maschera 8 Tendina_52
+    21300100: Puzzle 1 Maschera 8 Tendina_53
+    21300102: Puzzle 1 Maschera 8 Tendina_54
+    21300104: Puzzle 1 Maschera 8 Tendina_55
+    21300106: Puzzle 1 Maschera 8 Tendina_56
+    21300108: Puzzle 1 Maschera 8 Tendina_57
+    21300110: Puzzle 1 Maschera 8 Tendina_58
+    21300112: Puzzle 1 Maschera 8 Tendina_59
+    21300114: Puzzle 1 Maschera 8 Tendina_60
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_0
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1754
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99091fe37a0026c4da9ca57de6224aba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_1
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1687
+        width: 43
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced8587b3a7b47244960c2b031c18cff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_2
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 948
+        width: 516
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1444e11d8c57f8f40b939d50b1d07b3e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1747
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1102d9c24e2e64690b83f2de37b5cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_5
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 1639
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd4f2d678c305e48bafbba7dc772320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_6
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1640
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a9e1c1aa2692640bbfeb3c4b08392a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_7
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1587
+        width: 4
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d745d8e7150cb5f44a84a70afefd437f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_8
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1596
+        width: 9
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da076931464e62647b3594e8e50131b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_9
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1590
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7861de6896a4b847a9b7a89a0f740b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_11
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1571
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de851366bfcdfc4b842b06795373060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_12
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 1548
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeebdfed33fdec479974933d7a6e03d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_13
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1558
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1020d9a773fb824f8044950411b010a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_14
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 1532
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9784a1c10d87e44083ae66e8272992b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_15
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1542
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb36c7d70b06324eae5ee47fd4f3f24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_16
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1537
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf0f03084648dc46ae5f359e7bd7637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_17
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1530
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac0e52e01658a64ba141829ea069e6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_18
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1528
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f483bac5b3dfd45bbe9fa367b1dff7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_19
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 1527
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f6348de22abad40a76162266a3c609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_20
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1527
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62adb6d793b671743af8e6d0dfa337ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_21
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1520
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074d9b60d38658c419483179eeaba5f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_22
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1522
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b21cf24a3dfd4f4884f3e13c6d4cfcd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_23
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1521
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ee3f6336564bb4785626cc98fcb035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_24
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1523
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de16efde6998af345b861185745eb33d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_25
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1520
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a92234251ee5214f82785d835650ce7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1514
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aafe7b111603cc47b197b565a80e5aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_27
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 1497
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401adb92277e5ba41a39b7a0271246bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_29
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 1515
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8ab11502e6e274a984a27c850d6804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_30
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1507
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3727d3c3fef50594fa1172609cd2638e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_31
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1502
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1d3c46c7071ea4b8fa9f9868f454f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_32
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1491
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44f5130c2ca60f4ea5f164a83727184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_33
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1489
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0213349d49d3449a907a9cfebb0642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_34
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1477
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2553af8ff33c7734fbb1999431d665af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_35
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1489
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8233b695f25bf1b46a3538be2e7a44ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_36
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1471
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d35c516a2756f347a48e23e71002b8d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_37
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1480
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c67bbc14d95664f874975bf0a7630f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_38
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1472
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cee34eedef6cb44a37312be0d95c30
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_39
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1455
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027dde0d346bbf94a9fc87d15a240042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_40
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1226
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153bd17fd0571d14e9d2aefb25a43fc3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_41
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1226
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06451b09757d9324493aa13a4aa521ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_42
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 1195
+        width: 4
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ea8d005eb095a428a064d34fc415a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_43
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1206
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484b7702c3163034496b331333a9c7ec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_44
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1190
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb3b61087971844380f8bd52fdfa87f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_45
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1165
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3140caf86f0c34399e465f8983d912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_46
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 995
+        width: 28
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72c00d7464c8304c8878a2954b62485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_47
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1000
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5ae87ed82fa2d49bf796b705429d10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_48
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1011
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4285ed6dd43eb824bbeb435730b6f3d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_49
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 1003
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f108f4bc9f10c164e837a62344fea29d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_50
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1025
+        width: 6
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6c2ec97bfd7b04dacee49b66f0c2a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_51
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 1016
+        width: 10
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090325bfb2e8750469f8f0c923f6c179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_52
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1025
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1746933567c665f458903b102bb9ddba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_53
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1031
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7978f41f1e07448be754d74b216320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_54
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1020
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43bda333b262a44ba83852ff9b278f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_55
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 992
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f56fff401d026241bf6189987ec9814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_56
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1018
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0e353fdef4c1944bd43181023d6472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_57
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1002
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a32580d93f2c7247b0dd7f0f50997a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_58
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 978
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec5a28afbc110f47a4637485ae39cb3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_59
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 958
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea4bea6f6e163f4db0212b1e32969cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle 1 Maschera 8 Tendina_60
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 961
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479b54d8c387e664c92abb70d13f54d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 637b2ae161e4980429d4e3adde0065f3
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

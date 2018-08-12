@@ -14,10 +14,8 @@ public class DragAndDropPuzzleViewportUi : MonoBehaviour{
 
         for (int i = 0; i < Puzzle.transform.childCount; i++)
         {
-            PuzzlePieces.Add(Puzzle.transform.GetChild(i).GetComponent<Image>().sprite);
+            PuzzlePieces.Add(Puzzle.transform.GetChild(i).GetComponent<DragAndDropPuzzleDestination>().spriteTendina);
         }
-
-        ShuffleList(PuzzlePieces);
 
         for (int i = 0; i < PuzzlePieces.Count; i++)
         {
@@ -25,7 +23,9 @@ public class DragAndDropPuzzleViewportUi : MonoBehaviour{
             InstantiatedPiece.GetComponent<Image>().sprite = PuzzlePieces[i];
             InstantiatedPiece.GetComponent<DragAndDropPuzzlePice>().ID = i;
         }
-	}
+
+        ShuffleList(PuzzlePieces);
+    }
 
     private void ShuffleList(List<Sprite> ListToShuffle)
     {
