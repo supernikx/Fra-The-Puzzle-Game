@@ -370,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 7
   ImageCenter: {fileID: 224761450893515224}
+  isFilled: 0
 --- !u!114 &114018747361962654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   ImageCenter: {fileID: 224526261822270468}
+  isFilled: 0
 --- !u!114 &114166572151268124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   ImageCenter: {fileID: 224913417338198622}
+  isFilled: 0
 --- !u!114 &114318462104474374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,6 +493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   ImageCenter: {fileID: 224709691911748040}
+  isFilled: 0
 --- !u!114 &114368328673773888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -503,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   ImageCenter: {fileID: 224065015618087542}
+  isFilled: 0
 --- !u!114 &114372747106439498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,6 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   ImageCenter: {fileID: 224232117419068676}
+  isFilled: 0
 --- !u!114 &114486825296550924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -576,7 +582,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263514688873436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -610,6 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 9
   ImageCenter: {fileID: 224215864240855084}
+  isFilled: 0
 --- !u!114 &114783776012283370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -677,6 +684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   ImageCenter: {fileID: 224214133392049340}
+  isFilled: 0
 --- !u!114 &114835548469380870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -717,6 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   ImageCenter: {fileID: 224434283960161816}
+  isFilled: 0
 --- !u!114 &114901734538778108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -757,6 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   ImageCenter: {fileID: 224442908166277878}
+  isFilled: 0
 --- !u!222 &222213973886000978
 CanvasRenderer:
   m_ObjectHideFlags: 1

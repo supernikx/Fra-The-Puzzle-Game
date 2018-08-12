@@ -574,7 +574,7 @@ MonoBehaviour:
   ui: {fileID: 0}
   Puzzles:
   - {fileID: 1477194465658520, guid: 304d1704717b0ab49bfd4742ef2530fc, type: 2}
-  testdistance: {fileID: 1764015677}
+  canvas: {fileID: 42702011}
 --- !u!4 &796878179
 Transform:
   m_ObjectHideFlags: 0
