@@ -17,6 +17,8 @@ public class DragAndDropPuzzleViewportUi : MonoBehaviour{
             PuzzlePieces.Add(Puzzle.transform.GetChild(i).GetComponent<Image>().sprite);
         }
 
+        ShuffleList(PuzzlePieces);
+
         for (int i = 0; i < PuzzlePieces.Count; i++)
         {
             GameObject InstantiatedPiece = Instantiate(PuzzlePiecePrefab, Content.transform);
@@ -25,5 +27,16 @@ public class DragAndDropPuzzleViewportUi : MonoBehaviour{
         }
 	}
 
+    private void ShuffleList(List<Sprite> ListToShuffle)
+    {
+        Sprite temp;
+        for (int i = 0; i < ListToShuffle.Count; i++)
+        {
+            int rnd = UnityEngine.Random.Range(0, ListToShuffle.Count);
+            temp = ListToShuffle[rnd];
+            ListToShuffle[rnd] = ListToShuffle[i];
+            ListToShuffle[i] = temp;
+        }
+    }
 
 }
