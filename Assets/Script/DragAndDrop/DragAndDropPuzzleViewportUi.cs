@@ -5,16 +5,23 @@ using UnityEngine.UI;
 
 public class DragAndDropPuzzleViewportUi : MonoBehaviour{
 
-    public List<Sprite> PuzzlePices = new List<Sprite>();
-    public GameObject PuzzlePicePrefab;
+    List<Sprite> PuzzlePieces = new List<Sprite>();
+    public GameObject PuzzlePiecePrefab;
     public GameObject Content;
 
     // Use this for initialization
-    void Start () {
-        foreach (Sprite pice in PuzzlePices)
+    public void SetPuzzlePieces (GameObject Puzzle) {
+
+        for (int i = 0; i < Puzzle.transform.childCount; i++)
         {
-            Image InstantiatedPice = Instantiate(PuzzlePicePrefab, Content.transform).GetComponent<Image>();
-            InstantiatedPice.sprite = pice;          
+            PuzzlePieces.Add(Puzzle.transform.GetChild(i).GetComponent<Image>().sprite);
+        }
+
+        for (int i = 0; i < PuzzlePieces.Count; i++)
+        {
+            GameObject InstantiatedPiece = Instantiate(PuzzlePiecePrefab, Content.transform);
+            InstantiatedPiece.GetComponent<Image>().sprite = PuzzlePieces[i];
+            InstantiatedPiece.GetComponent<DragAndDropPuzzlePice>().ID = i;
         }
 	}
 

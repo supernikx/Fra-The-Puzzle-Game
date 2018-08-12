@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DragAndDropPuzzleUIManager : MonoBehaviour {
-    [Header("Puzzle Pice")]
+    [Header("Puzzle Piece")]
     [Header("Inventory References")]
     public ScrollRect InventoryRect;
     public Button InventoryRectButton;

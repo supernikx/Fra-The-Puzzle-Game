@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class DragAndDropPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
+    public int ID;
+
     public float BackSpeed;
 
     DragAndDropPuzzleGameManager gm;
@@ -66,7 +68,7 @@ public class DragAndDropPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandle
     {
         if (CanDrag && !Backing)
         {
-            if (gm.CheckDistance(Camera.main.ScreenToWorldPoint(transform.position)))
+            if (gm.CheckDistance(Camera.main.ScreenToWorldPoint(transform.position), ID))
             {
                 gameObject.SetActive(false);
                 gm.ui.EnableScroll(true);
