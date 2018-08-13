@@ -70,8 +70,9 @@ public class DragAndDropPuzzlePice : MonoBehaviour, IDragHandler, IEndDragHandle
         {
             if (gm.CheckDistance(Camera.main.ScreenToWorldPoint(transform.position), ID))
             {
-                gameObject.SetActive(false);
+                gm.viewportUi.DisablePice(gameObject);
                 gm.ui.EnableScroll(true);
+                gm.CheckEndGame();
             }
             else
             {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DragAndDropPuzzleGameManager : MonoBehaviour
 {
@@ -9,24 +10,28 @@ public class DragAndDropPuzzleGameManager : MonoBehaviour
 
     [HideInInspector]
     public DragAndDropPuzzleUIManager ui;
+    [HideInInspector]
+    public DragAndDropPuzzleViewportUi viewportUi;
+    [HideInInspector]
+    public EventManager ev;
 
     [Header("Puzzle List")]
     public GameObject[] Puzzles;
 
     public Transform canvas;
-
-    DragAndDropPuzzleViewportUi viewportUi;
+    
     List<DragAndDropPuzzleDestination> puzzleDestinations = new List<DragAndDropPuzzleDestination>();
 
     private void Awake()
     {
         instance = this;
+        ev = GetComponent<EventManager>();
+        ui = GetComponent<DragAndDropPuzzleUIManager>();
+        viewportUi = FindObjectOfType<DragAndDropPuzzleViewportUi>();
     }
 
     private void Start()
     {
-        ui = GetComponent<DragAndDropPuzzleUIManager>();
-        viewportUi = FindObjectOfType<DragAndDropPuzzleViewportUi>();
         if (viewportUi)
         {
             GameObject InstantiatedPuzzle = Instantiate(Puzzles[Random.Range(0, Puzzles.Length)], canvas);
@@ -38,8 +43,6 @@ public class DragAndDropPuzzleGameManager : MonoBehaviour
         }
         else
             print("viewport not found");
-
-
     }
 
     public bool CheckDistance(Vector2 _PiecePosition, int PuzzlePieceID)//invece che vector2 come imput, prendo DragAndDropPuzzlePiece.
@@ -79,4 +82,17 @@ public class DragAndDropPuzzleGameManager : MonoBehaviour
         return null;
     }
 
+    public void CheckEndGame()
+    {
+        if (viewportUi.PuzzlePieces.Count == 0)
+        {
+            if (ev.EndGame != null)
+                ev.EndGame();
+        }
+    }
+
+    public void RetryButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
