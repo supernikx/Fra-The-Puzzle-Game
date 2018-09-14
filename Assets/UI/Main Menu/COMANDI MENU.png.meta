@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 18946b75e4db87e4f8f57da9a2ec8c66
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: COMANDI MENU_0
+    21300002: COMANDI MENU_1
+    21300004: COMANDI MENU_2
+    21300006: COMANDI MENU_3
+    21300008: COMANDI MENU_4
+    21300010: COMANDI MENU_5
+    21300012: COMANDI MENU_6
+    21300014: COMANDI MENU_7
+    21300016: COMANDI MENU_8
+    21300018: COMANDI MENU_9
+    21300020: COMANDI MENU_10
+    21300022: COMANDI MENU_11
+    21300024: COMANDI MENU_12
+    21300026: COMANDI MENU_13
+    21300028: COMANDI MENU_14
+    21300030: COMANDI MENU_15
+    21300032: COMANDI MENU_16
+    21300034: COMANDI MENU_17
+    21300036: COMANDI MENU_18
+    21300038: COMANDI MENU_19
+    21300040: COMANDI MENU_20
+    21300042: COMANDI MENU_21
+    21300044: COMANDI MENU_22
+    21300046: COMANDI MENU_23
+    21300048: COMANDI MENU_24
+    21300050: COMANDI MENU_25
+    21300052: COMANDI MENU_26
+    21300054: COMANDI MENU_27
+    21300056: COMANDI MENU_28
+    21300058: COMANDI MENU_29
+    21300060: COMANDI MENU_30
+    21300062: COMANDI MENU_31
+    21300064: COMANDI MENU_32
+    21300066: COMANDI MENU_33
+    21300068: COMANDI MENU_34
+    21300070: COMANDI MENU_35
+    21300072: COMANDI MENU_36
+    21300074: COMANDI MENU_37
+    21300076: COMANDI MENU_38
+    21300078: COMANDI MENU_39
+    21300080: COMANDI MENU_40
+    21300082: COMANDI MENU_41
+    21300084: COMANDI MENU_42
+    21300086: COMANDI MENU_43
+    21300088: COMANDI MENU_44
+    21300090: COMANDI MENU_45
+    21300092: COMANDI MENU_46
+    21300094: COMANDI MENU_47
+    21300096: COMANDI MENU_48
+    21300098: COMANDI MENU_49
+    21300100: COMANDI MENU_50
+    21300102: COMANDI MENU_51
+    21300104: COMANDI MENU_52
+    21300106: COMANDI MENU_53
+    21300108: COMANDI MENU_54
+    21300110: COMANDI MENU_55
+    21300112: COMANDI MENU_56
+    21300114: COMANDI MENU_57
+    21300116: COMANDI MENU_58
+    21300118: COMANDI MENU_59
+    21300120: COMANDI MENU_60
+    21300122: COMANDI MENU_61
+    21300124: COMANDI MENU_62
+    21300126: COMANDI MENU_63
+    21300128: COMANDI MENU_64
+    21300130: COMANDI MENU_65
+    21300132: COMANDI MENU_66
+    21300134: COMANDI MENU_67
+    21300136: COMANDI MENU_68
+    21300138: COMANDI MENU_69
+    21300140: COMANDI MENU_70
+    21300142: COMANDI MENU_71
+    21300144: COMANDI MENU_72
+    21300146: COMANDI MENU_73
+    21300148: COMANDI MENU_74
+    21300150: COMANDI MENU_75
+    21300152: COMANDI MENU_76
+    21300154: COMANDI MENU_77
+    21300156: COMANDI MENU_78
+    21300158: COMANDI MENU_79
+    21300160: COMANDI MENU_80
+    21300162: COMANDI MENU_81
+    21300164: COMANDI MENU_82
+    21300166: COMANDI MENU_83
+    21300168: COMANDI MENU_84
+    21300170: COMANDI MENU_85
+    21300172: COMANDI MENU_86
+    21300174: COMANDI MENU_87
+    21300176: COMANDI MENU_88
+    21300178: COMANDI MENU_89
+    21300180: COMANDI MENU_90
+    21300182: COMANDI MENU_91
+    21300184: COMANDI MENU_92
+    21300186: COMANDI MENU_93
+    21300188: COMANDI MENU_94
+    21300190: COMANDI MENU_95
+    21300192: COMANDI MENU_96
+    21300194: COMANDI MENU_97
+    21300196: COMANDI MENU_98
+    21300198: COMANDI MENU_99
+    21300200: COMANDI MENU_100
+    21300202: COMANDI MENU_101
+    21300204: COMANDI MENU_102
+    21300206: COMANDI MENU_103
+    21300208: COMANDI MENU_104
+    21300210: COMANDI MENU_105
+    21300212: COMANDI MENU_106
+    21300214: COMANDI MENU_107
+    21300216: COMANDI MENU_108
+    21300218: COMANDI MENU_109
+    21300220: COMANDI MENU_110
+    21300222: COMANDI MENU_111
+    21300224: COMANDI MENU_112
+    21300226: COMANDI MENU_113
+    21300228: COMANDI MENU_114
+    21300230: COMANDI MENU_115
+    21300232: COMANDI MENU_116
+    21300234: COMANDI MENU_117
+    21300236: COMANDI MENU_118
+    21300238: COMANDI MENU_119
+    21300240: COMANDI MENU_120
+    21300242: COMANDI MENU_121
+    21300244: COMANDI MENU_122
+    21300246: COMANDI MENU_123
+    21300248: COMANDI MENU_124
+    21300250: COMANDI MENU_125
+    21300252: COMANDI MENU_126
+    21300254: COMANDI MENU_127
+    21300256: COMANDI MENU_128
+    21300258: COMANDI MENU_129
+    21300260: COMANDI MENU_130
+    21300262: COMANDI MENU_131
+    21300264: COMANDI MENU_132
+    21300266: COMANDI MENU_133
+    21300268: COMANDI MENU_134
+    21300270: COMANDI MENU_135
+    21300272: COMANDI MENU_136
+    21300274: COMANDI MENU_137
+    21300276: COMANDI MENU_138
+    21300278: COMANDI MENU_139
+    21300280: COMANDI MENU_140
+    21300282: COMANDI MENU_141
+    21300284: COMANDI MENU_142
+    21300286: COMANDI MENU_143
+    21300288: COMANDI MENU_144
+    21300290: COMANDI MENU_145
+    21300292: COMANDI MENU_146
+    21300294: COMANDI MENU_147
+    21300296: COMANDI MENU_148
+    21300298: COMANDI MENU_149
+    21300300: COMANDI MENU_150
+    21300302: COMANDI MENU_151
+    21300304: COMANDI MENU_152
+    21300306: COMANDI MENU_153
+    21300308: COMANDI MENU_154
+    21300310: COMANDI MENU_155
+    21300312: COMANDI MENU_156
+    21300314: COMANDI MENU_157
+    21300316: COMANDI MENU_158
+    21300318: COMANDI MENU_159
+    21300320: COMANDI MENU_160
+    21300322: COMANDI MENU_161
+    21300324: COMANDI MENU_162
+    21300326: COMANDI MENU_163
+    21300328: COMANDI MENU_164
+    21300330: COMANDI MENU_165
+    21300332: COMANDI MENU_166
+    21300334: COMANDI MENU_167
+    21300336: COMANDI MENU_168
+    21300338: COMANDI MENU_169
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: COMANDI MENU_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800.25
+        width: 1067
+        height: 266.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854683bc0195b85448b941eab1ed658a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMANDI MENU_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534.25
+        width: 1067
+        height: 266.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fbed59f87273d4c9008a202cb63b49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMANDI MENU_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268.25
+        width: 1067
+        height: 266.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90f59b21b079dd4f99799141852ba85
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COMANDI MENU_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.25
+        width: 1067
+        height: 266.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0377cbccb4ed74aa465392619165ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: cbd47a1bc0f6e5947afc531cf8492544
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

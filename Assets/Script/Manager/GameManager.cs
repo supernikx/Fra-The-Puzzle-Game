@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         gen = FindObjectOfType<PuzzleGenerator>();
         ev = GetComponent<EventManager>();
-        ui = FindObjectOfType<UIManager>();        
+        ui = FindObjectOfType<UIManager>();
     }
 
     private void Start()
@@ -41,6 +41,31 @@ public class GameManager : MonoBehaviour
 
         GameEnded = false;
         Moving = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            switch (ui.GetActiveMenu())
+            {
+                case MenuType.MainMenu:
+                    Application.Quit();
+                    break;
+                case MenuType.LevelSelection:
+                    ui.ToggleMenu(MenuType.MainMenu);
+                    break;
+                case MenuType.WinScreen:
+                    ui.ToggleMenu(MenuType.LevelSelection);
+                    break;
+                case MenuType.PauseMenu:
+                    ui.ToggleMenu(MenuType.None);
+                    break;
+                case MenuType.None:
+                    ui.ToggleMenu(MenuType.PauseMenu);
+                    break;
+            }
+        }
     }
 
     public void StartLevel()
@@ -87,8 +112,8 @@ public class GameManager : MonoBehaviour
                 }
 
                 if (swap)
-                {                    
-                    StartCoroutine(MovePice(_pice,PiceToCompare));
+                {
+                    StartCoroutine(MovePice(_pice, PiceToCompare));
                 }
 
             }
@@ -132,7 +157,7 @@ public class GameManager : MonoBehaviour
         Moving = true;
         Vector2 tempPos = PiceToMove.gameObject.transform.position;
         Coordinates tempXY = PiceToMove.ActualPosition;
-        while (Vector2.Distance(InvisiblePice.gameObject.transform.position , PiceToMove.gameObject.transform.position)>0.01f)
+        while (Vector2.Distance(InvisiblePice.gameObject.transform.position, PiceToMove.gameObject.transform.position) > 0.01f)
         {
             PiceToMove.gameObject.transform.position = Vector2.MoveTowards(PiceToMove.gameObject.transform.position, InvisiblePice.gameObject.transform.position, Time.deltaTime * 10f);
             yield return null;
@@ -158,5 +183,13 @@ public class GameManager : MonoBehaviour
         }
         gen.CanGenerate = true;
         gen.GeneratePuzzle();
+    }
+
+    /// <summary>
+    /// Funzione che apre nel browser la pagina instagram
+    /// </summary>
+    public void InstagramButton()
+    {
+        Application.OpenURL("https://www.instagram.com/fradesign.it/");
     }
 }
