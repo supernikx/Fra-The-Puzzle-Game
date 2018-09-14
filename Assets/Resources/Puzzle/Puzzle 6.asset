@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb44fcef45565d478f43446c38d39cd, type: 3}
+  m_Name: Puzzle 6
+  m_EditorClassIdentifier: 
+  DefaulImage: {fileID: 21300000, guid: e5bba58f78015a542bcf205bb7372d61, type: 3}
+  OverlayImage: {fileID: 21300000, guid: a384194bb4169e440800ab39b6a84594, type: 3}
+  Puzzle: {fileID: 2800000, guid: 3d64789a8dda7e64ba2376ba79d94def, type: 3}

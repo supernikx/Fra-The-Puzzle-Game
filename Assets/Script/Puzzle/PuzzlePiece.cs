@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class PuzzlePiceData
+public class PuzzlePieceData
 {
     public Sprite PiceSprite;
     public GameObject gameObject;
@@ -11,7 +11,7 @@ public class PuzzlePiceData
     public Coordinates ActualPosition;
     public bool InvisiblePice;
 
-    public PuzzlePiceData(Sprite _sprite, GameObject _gameObject, Coordinates _right)
+    public PuzzlePieceData(Sprite _sprite, GameObject _gameObject, Coordinates _right)
     {
         PiceSprite = _sprite;
         gameObject = _gameObject;
@@ -20,9 +20,9 @@ public class PuzzlePiceData
     }
 }
 
-public class PuzzlePice : MonoBehaviour {
+public class PuzzlePiece : MonoBehaviour {
 
-    public PuzzlePiceData data;
+    public PuzzlePieceData data;
 
     private void OnMouseDown()
     {

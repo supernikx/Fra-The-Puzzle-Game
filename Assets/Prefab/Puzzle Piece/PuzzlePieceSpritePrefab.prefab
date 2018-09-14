@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114573617640454476}
   - component: {fileID: 61378310668519598}
   m_Layer: 0
-  m_Name: PuzzlePiceSpritePrefab
+  m_Name: PuzzlePieceSpritePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

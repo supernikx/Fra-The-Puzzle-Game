@@ -32,7 +32,7 @@ public class PuzzleGenerator : MonoBehaviour
     [Header("Puzzles Images")]
     public Texture2D[] PuzzlesImages;
     Sprite[] SelectedPuzzleSprites;
-    public List<PuzzlePice> InstantiatedPices = new List<PuzzlePice>();
+    public List<PuzzlePiece> InstantiatedPices = new List<PuzzlePiece>();
 
     public bool CanGenerate;
 
@@ -61,8 +61,8 @@ public class PuzzleGenerator : MonoBehaviour
                     SpriteRenderer InstantiatedSpriteRender = Instantiate(PiceSpritePrefab, new Vector3(StartPosition.position.x, StartPosition.position.y, StartPosition.position.z), Quaternion.identity, PuzzlePicesParent).GetComponent<SpriteRenderer>();
                     InstantiatedSpriteRender.sprite = SelectedPuzzleSprites[k];
                     InstantiatedSpriteRender.gameObject.GetComponent<BoxCollider2D>().size = InstantiatedSpriteRender.sprite.bounds.size;
-                    PuzzlePice InstantiatedPuzzlePice = InstantiatedSpriteRender.gameObject.GetComponent<PuzzlePice>();
-                    InstantiatedPuzzlePice.data = new PuzzlePiceData(InstantiatedSpriteRender.sprite, InstantiatedSpriteRender.gameObject, new Coordinates(i, j));
+                    PuzzlePiece InstantiatedPuzzlePice = InstantiatedSpriteRender.gameObject.GetComponent<PuzzlePiece>();
+                    InstantiatedPuzzlePice.data = new PuzzlePieceData(InstantiatedSpriteRender.sprite, InstantiatedSpriteRender.gameObject, new Coordinates(i, j));
                     if (i == PuzzleX - 1 && j == PuzzleY - 1)
                         InstantiatedPuzzlePice.data.InvisiblePice = true;
                     InstantiatedPices.Add(InstantiatedPuzzlePice);
@@ -101,7 +101,7 @@ public class PuzzleGenerator : MonoBehaviour
     /// </summary>
     private void ShufflePuzzlePices()
     {
-        PuzzlePice temp;
+        PuzzlePiece temp;
         for (int i = 0; i < InstantiatedPices.Count; i++)
         {
             int rnd = UnityEngine.Random.Range(0, InstantiatedPices.Count);

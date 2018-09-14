@@ -74,9 +74,9 @@ public class GameManager : MonoBehaviour
         gen.GeneratePuzzle();
     }
 
-    public void CheckIfCanMove(PuzzlePiceData _pice)
+    public void CheckIfCanMove(PuzzlePieceData _pice)
     {
-        PuzzlePiceData PiceToCompare = null;
+        PuzzlePieceData PiceToCompare = null;
         if (!GameEnded && !Moving)
         {
             if (!_pice.InvisiblePice)
@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
     public bool CheckPicePositions()
     {
         bool win = true;
-        foreach (PuzzlePice pice in gen.InstantiatedPices)
+        foreach (PuzzlePiece pice in gen.InstantiatedPices)
         {
             if (!pice.CheckPosition())
             {
@@ -142,9 +142,9 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    public PuzzlePiceData GetPiceData(int x, int y)
+    public PuzzlePieceData GetPiceData(int x, int y)
     {
-        foreach (PuzzlePice pice in gen.InstantiatedPices)
+        foreach (PuzzlePiece pice in gen.InstantiatedPices)
         {
             if (pice.data.ActualPosition.X == x && pice.data.ActualPosition.Y == y)
                 return pice.data;
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-    IEnumerator MovePice(PuzzlePiceData PiceToMove, PuzzlePiceData InvisiblePice)
+    IEnumerator MovePice(PuzzlePieceData PiceToMove, PuzzlePieceData InvisiblePice)
     {
         Moving = true;
         Vector2 tempPos = PiceToMove.gameObject.transform.position;
@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
     public void AgainButton()
     {
         GameEnded = false;
-        foreach (PuzzlePice pice in new List<PuzzlePice>(gen.InstantiatedPices))
+        foreach (PuzzlePiece pice in new List<PuzzlePiece>(gen.InstantiatedPices))
         {
             Destroy(pice.gameObject);
         }
