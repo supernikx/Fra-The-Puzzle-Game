@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ui.Init();
+        gen.Init();
 
         GameEnded = false;
         Moving = false;
@@ -62,18 +64,26 @@ public class GameManager : MonoBehaviour
                     ui.ToggleMenu(MenuType.None);
                     break;
                 case MenuType.None:
-                    ui.ToggleMenu(MenuType.PauseMenu);
+                    ui.ToggleMenu(MenuType.MainMenu);
+                    gen.DestroyPuzzle();
                     break;
             }
         }
     }
 
+    /// <summary>
+    /// Funzione che starta il gioco
+    /// </summary>
     public void StartLevel()
     {
         ui.ToggleMenu(MenuType.None);
         gen.GeneratePuzzle();
     }
 
+    /// <summary>
+    /// Funzione che controlla se il pezzo passato come parametro può spostarsi
+    /// </summary>
+    /// <param name="_pice"></param>
     public void CheckIfCanMove(PuzzlePieceData _pice)
     {
         PuzzlePieceData PiceToCompare = null;
@@ -121,6 +131,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Funzione che controlla se i pezzi sono al posto giusto
+    /// </summary>
+    /// <returns></returns>
     public bool CheckPicePositions()
     {
         bool win = true;
@@ -142,6 +156,12 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Funzione che ritorna il pezzo di puzzle corrispondente alle coordinate passate come parametro
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <returns></returns>
     public PuzzlePieceData GetPiceData(int x, int y)
     {
         foreach (PuzzlePiece pice in gen.InstantiatedPices)
@@ -152,6 +172,12 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
+    /// <summary>
+    /// Coroutine che muove il pezzo toccato nel posto libero
+    /// </summary>
+    /// <param name="PiceToMove"></param>
+    /// <param name="InvisiblePice"></param>
+    /// <returns></returns>
     IEnumerator MovePice(PuzzlePieceData PiceToMove, PuzzlePieceData InvisiblePice)
     {
         Moving = true;
@@ -169,27 +195,19 @@ public class GameManager : MonoBehaviour
         CheckPicePositions();
     }
 
-    private void EndGame()
-    {
-        GameEnded = true;
-    }
-
-    public void AgainButton()
-    {
-        GameEnded = false;
-        foreach (PuzzlePiece pice in new List<PuzzlePiece>(gen.InstantiatedPices))
-        {
-            Destroy(pice.gameObject);
-        }
-        gen.CanGenerate = true;
-        gen.GeneratePuzzle();
-    }
-
     /// <summary>
     /// Funzione che apre nel browser la pagina instagram
     /// </summary>
     public void InstagramButton()
     {
         Application.OpenURL("https://www.instagram.com/fradesign.it/");
+    }
+
+    /// <summary>
+    /// Funzione che viene chiamata quando il gioco finisce
+    /// </summary>
+    private void EndGame()
+    {
+        Debug.Log("Gioco FInito");
     }
 }

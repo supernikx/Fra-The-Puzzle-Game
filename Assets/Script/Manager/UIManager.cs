@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour {
     public void ToggleMenu(MenuType _type)
     {
         DisableAllMenus();
+        ActiveMenu = _type;
         if (_type == MenuType.None)
             return;
         switch (_type)
@@ -38,8 +39,7 @@ public class UIManager : MonoBehaviour {
                 break;
             default:
                 break;
-        }
-        ActiveMenu = _type;
+        }        
     }
 
     /// <summary>
@@ -49,6 +49,7 @@ public class UIManager : MonoBehaviour {
     public void ToggleMenu(int _typeIndex)
     {
         DisableAllMenus();
+        ActiveMenu = (MenuType)_typeIndex;
         if (_typeIndex == 0)
             return;
         switch (_typeIndex)
@@ -66,10 +67,13 @@ public class UIManager : MonoBehaviour {
                 break;
             default:
                 break;
-        }
-        ActiveMenu = (MenuType)_typeIndex;
+        }        
     }
 
+    /// <summary>
+    /// Funzione che ritorna il menu attivo
+    /// </summary>
+    /// <returns></returns>
     public MenuType GetActiveMenu()
     {
         return ActiveMenu;

@@ -30,16 +30,17 @@ public class PuzzleGenerator : MonoBehaviour
     Vector3 Offset = new Vector3(0, 0, 0);
 
     [Header("Puzzles Images")]
-    public Texture2D[] PuzzlesImages;
+    public PuzzleScriptable[] PuzzleList;
+    public PuzzleScriptable SelectedPuzzle;
     Sprite[] SelectedPuzzleSprites;
     public List<PuzzlePiece> InstantiatedPices = new List<PuzzlePiece>();
 
     public bool CanGenerate;
 
-    private void Start()
+    public void Init()
     {
         CanGenerate = true;
-        PuzzlesImages = Resources.LoadAll<Texture2D>("SlidingPuzzleImages");
+        PuzzleList = Resources.LoadAll<PuzzleScriptable>("PuzzleScriptable");
     }
 
     /// <summary>
@@ -51,7 +52,8 @@ public class PuzzleGenerator : MonoBehaviour
         {
             int k = 0;
             SelectedPuzzleSprites = new Sprite[] { };
-            SelectedPuzzleSprites = Resources.LoadAll<Sprite>("SlidingPuzzleImages\\" + PuzzlesImages[UnityEngine.Random.Range(0, PuzzlesImages.Count())].name);
+            SelectedPuzzle = PuzzleList[UnityEngine.Random.Range(0, PuzzleList.Count())];
+            SelectedPuzzleSprites = Resources.LoadAll<Sprite>("Puzzle\\" + SelectedPuzzle.name + "\\" + SelectedPuzzle.Puzzle.name);
             Debug.Log("Puzzle Randomizzato");
             InstantiatedPices.Clear();
             for (int i = 0; i < PuzzleX; i++)
@@ -78,7 +80,7 @@ public class PuzzleGenerator : MonoBehaviour
                 {
                     InstantiatedPices[k].gameObject.transform.position = new Vector3(StartPosition.position.x + Offset.x, StartPosition.position.y + Offset.y, StartPosition.position.z);
                     InstantiatedPices[k].data.ActualPosition = new Coordinates(i, j);
-                    Offset.x += InstantiatedPices[k].data.PiceSprite.bounds.size.x * PiceSpritePrefab.transform.localScale.x;                    
+                    Offset.x += InstantiatedPices[k].data.PiceSprite.bounds.size.x * PiceSpritePrefab.transform.localScale.x;
                     if (i == PuzzleX - 1 && j == PuzzleY - 1)
                     {
                         InstantiatedPices[k].gameObject.GetComponent<SpriteRenderer>().sprite = null;
@@ -94,6 +96,18 @@ public class PuzzleGenerator : MonoBehaviour
             CanGenerate = false;
             Debug.Log("Puzzle Generato");
         }
+    }
+
+    /// <summary>
+    /// Funzione che distrugge il puzzle attuale
+    /// </summary>
+    public void DestroyPuzzle()
+    {
+        foreach (PuzzlePiece p in InstantiatedPices)
+        {
+            Destroy(p.gameObject);
+        }
+        CanGenerate = true;
     }
 
     /// <summary>

@@ -26,7 +26,6 @@ public class PuzzlePiece : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        Debug.Log(data.RightPosition.X + " " + data.RightPosition.Y);
         GameManager.instance.CheckIfCanMove(data);
     }
 
