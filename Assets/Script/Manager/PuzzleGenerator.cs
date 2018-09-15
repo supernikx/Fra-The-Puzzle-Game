@@ -30,32 +30,24 @@ public class PuzzleGenerator : MonoBehaviour
     Vector3 Offset = new Vector3(0, 0, 0);
 
     [Header("Puzzles Images")]
-    public PuzzleScriptable[] PuzzleList;
     public PuzzleScriptable SelectedPuzzle;
     Sprite[] SelectedPuzzleSprites;
     public List<PuzzlePiece> InstantiatedPices = new List<PuzzlePiece>();
 
     public bool CanGenerate;
 
-    public void Init()
-    {
-        CanGenerate = true;
-        PuzzleList = Resources.LoadAll<PuzzleScriptable>("PuzzleScriptable");
-    }
-
     /// <summary>
-    /// Funzione che Genera il puzzle
+    /// Funzione che istanzia il nuovo puzzle
     /// </summary>
-    public void GeneratePuzzle()
+    private void InstantieteNewPuzzle(PuzzleScriptable _SelectedPuzzle)
     {
         if (CanGenerate)
         {
             int k = 0;
             SelectedPuzzleSprites = new Sprite[] { };
-            SelectedPuzzle = PuzzleList[UnityEngine.Random.Range(0, PuzzleList.Count())];
+            SelectedPuzzle = _SelectedPuzzle;
             SelectedPuzzleSprites = Resources.LoadAll<Sprite>("Puzzle\\" + SelectedPuzzle.name + "\\" + SelectedPuzzle.Puzzle.name);
-            Debug.Log("Puzzle Randomizzato");
-            InstantiatedPices.Clear();
+            Debug.Log("Puzzle Caricato");
             for (int i = 0; i < PuzzleX; i++)
             {
                 for (int j = 0; j < PuzzleY; j++)
@@ -99,15 +91,20 @@ public class PuzzleGenerator : MonoBehaviour
     }
 
     /// <summary>
-    /// Funzione che distrugge il puzzle attuale
+    /// Funzione che distrugge il puzzle (se presente) e ne istanzia uno nuovo
     /// </summary>
-    public void DestroyPuzzle()
+    public void GeneratePuzzle(PuzzleScriptable _SelectedPuzzle)
     {
-        foreach (PuzzlePiece p in InstantiatedPices)
+        if (InstantiatedPices[0] != null)
         {
-            Destroy(p.gameObject);
+            foreach (PuzzlePiece p in InstantiatedPices)
+            {
+                Destroy(p.gameObject);
+            }
         }
+        InstantiatedPices.Clear();
         CanGenerate = true;
+        InstantieteNewPuzzle(_SelectedPuzzle);
     }
 
     /// <summary>
