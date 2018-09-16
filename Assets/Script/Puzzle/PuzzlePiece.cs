@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
 public class PuzzlePieceData
@@ -20,12 +19,17 @@ public class PuzzlePieceData
     }
 }
 
-public class PuzzlePiece : MonoBehaviour {
+public class PuzzlePiece : MonoBehaviour
+{
 
     public PuzzlePieceData data;
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         GameManager.instance.CheckIfCanMove(data);
     }
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaulImage: {fileID: 21300000, guid: e5bba58f78015a542bcf205bb7372d61, type: 3}
   OverlayImage: {fileID: 21300000, guid: a384194bb4169e440800ab39b6a84594, type: 3}
-  Puzzle: {fileID: 2800000, guid: 3d64789a8dda7e64ba2376ba79d94def, type: 3}
+  Puzzle: {fileID: 2800000, guid: e5bba58f78015a542bcf205bb7372d61, type: 3}

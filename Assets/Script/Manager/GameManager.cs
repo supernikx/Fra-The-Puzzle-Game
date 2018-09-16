@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -41,7 +39,7 @@ public class GameManager : MonoBehaviour
         ev = GetComponent<EventManager>();
         ui = FindObjectOfType<UIManager>();
         lvl = FindObjectOfType<LevelSelectionManager>();
-		dm = FindObjectOfType<DifficultyManager> ();
+		dm = FindObjectOfType<DifficultyManager>();
     }
 
     private void Start()
@@ -72,7 +70,8 @@ public class GameManager : MonoBehaviour
                     ui.ToggleMenu(MenuType.None);
                     break;
                 case MenuType.None:
-                    ui.ToggleMenu(MenuType.MainMenu);
+                    gen.DestroyPuzzle();
+                    ui.ToggleMenu(MenuType.LevelSelection);
                     break;
             }
         }
@@ -81,12 +80,13 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Funzione che starta il gioco
     /// </summary>
-	public void StartGame(PuzzleScriptable _PuzzleToPlay, Coordinates _coords)
+	public void StartGame(PuzzleScriptable _PuzzleToPlay, Difficulty _DifficultySelected)
     {
         PlayingPuzzle = _PuzzleToPlay;
-		gen.GeneratePuzzle(_PuzzleToPlay, _coords);
-        ui.ToggleMenu(MenuType.None);
+		gen.GeneratePuzzle(_PuzzleToPlay, _DifficultySelected);
     }
+
+
 
     /// <summary>
     /// Funzione che controlla se il pezzo passato come parametro può spostarsi
@@ -107,14 +107,14 @@ public class GameManager : MonoBehaviour
                         swap = true;
                     }
                 }
-                if (_pice.ActualPosition.X < gen.PuzzleX - 1 && !swap)
+                if (_pice.ActualPosition.X < gen.SelectedDifficultySettings.PuzzleSize.X - 1 && !swap)
                 {
                     if (((PiceToCompare = GetPiceData(_pice.ActualPosition.X + 1, _pice.ActualPosition.Y)) != null) && PiceToCompare.InvisiblePice)
                     {
                         swap = true;
                     }
                 }
-                if (_pice.ActualPosition.Y < gen.PuzzleY - 1 && !swap)
+                if (_pice.ActualPosition.Y < gen.SelectedDifficultySettings.PuzzleSize.Y - 1 && !swap)
                 {
                     if (((PiceToCompare = GetPiceData(_pice.ActualPosition.X, _pice.ActualPosition.Y + 1)) != null) && PiceToCompare.InvisiblePice)
                     {
