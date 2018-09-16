@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public EventManager ev;
     [HideInInspector]
     public LevelSelectionManager lvl;
+	[HideInInspector]
+	public DifficultyManager dm;
 
     PuzzleScriptable PlayingPuzzle;
 
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
         ev = GetComponent<EventManager>();
         ui = FindObjectOfType<UIManager>();
         lvl = FindObjectOfType<LevelSelectionManager>();
+		dm = FindObjectOfType<DifficultyManager> ();
     }
 
     private void Start()
@@ -78,10 +81,10 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Funzione che starta il gioco
     /// </summary>
-    public void StartGame(PuzzleScriptable _PuzzleToPlay)
+	public void StartGame(PuzzleScriptable _PuzzleToPlay, Coordinates _coords)
     {
         PlayingPuzzle = _PuzzleToPlay;
-        gen.GeneratePuzzle(_PuzzleToPlay);
+		gen.GeneratePuzzle(_PuzzleToPlay, _coords);
         ui.ToggleMenu(MenuType.None);
     }
 

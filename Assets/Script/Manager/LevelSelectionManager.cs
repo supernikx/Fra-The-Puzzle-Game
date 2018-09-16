@@ -32,7 +32,7 @@ public class LevelSelectionManager : MonoBehaviour
 
     public void PuzzleSelected(int _PuzzleID)
     {
-        GameManager.instance.StartGame(PuzzleList[_PuzzleID]);
+		GameManager.instance.dm.Initialize (PuzzleList[_PuzzleID], _PuzzleID + 1);   
     }
 
 }

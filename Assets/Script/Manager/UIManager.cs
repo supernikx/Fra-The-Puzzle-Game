@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour {
     public GameObject MainMenu;
     public GameObject LevelSelection;
     public GameObject WinScreen;
+	public GameObject DifficultySelectionPanel;
     MenuType ActiveMenu = MenuType.MainMenu;
 
     public void Init()
@@ -37,6 +38,9 @@ public class UIManager : MonoBehaviour {
             case MenuType.WinScreen:
                 WinScreen.SetActive(true);
                 break;
+			case MenuType.DifficultyMenu:
+				DifficultySelectionPanel.SetActive (true);
+				break;
             default:
                 break;
         }        
@@ -65,6 +69,9 @@ public class UIManager : MonoBehaviour {
             case (int)MenuType.WinScreen:
                 WinScreen.SetActive(true);
                 break;
+			case (int)MenuType.DifficultyMenu:
+				DifficultySelectionPanel.SetActive(true);
+				break;
             default:
                 break;
         }        
@@ -87,6 +94,7 @@ public class UIManager : MonoBehaviour {
         MainMenu.SetActive(false);
         LevelSelection.SetActive(false);
         WinScreen.SetActive(false);
+		DifficultySelectionPanel.SetActive (false);
     }
 }
 
@@ -97,4 +105,5 @@ public enum MenuType
     LevelSelection = 2,
     WinScreen = 3,
     PauseMenu = 4,
+	DifficultyMenu = 5
 }

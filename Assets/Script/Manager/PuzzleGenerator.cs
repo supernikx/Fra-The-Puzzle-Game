@@ -39,7 +39,7 @@ public class PuzzleGenerator : MonoBehaviour
     /// <summary>
     /// Funzione che istanzia il nuovo puzzle
     /// </summary>
-    private void InstantieteNewPuzzle(PuzzleScriptable _SelectedPuzzle)
+	private void InstantieteNewPuzzle(PuzzleScriptable _SelectedPuzzle, Coordinates _coords)
     {
         if (CanGenerate)
         {
@@ -48,9 +48,9 @@ public class PuzzleGenerator : MonoBehaviour
             SelectedPuzzle = _SelectedPuzzle;
             SelectedPuzzleSprites = Resources.LoadAll<Sprite>("Puzzle\\" + SelectedPuzzle.name + "\\" + SelectedPuzzle.Puzzle.name);
             Debug.Log("Puzzle Caricato");
-            for (int i = 0; i < PuzzleX; i++)
+			for (int i = 0; i < _coords.X; i++)
             {
-                for (int j = 0; j < PuzzleY; j++)
+				for (int j = 0; j < _coords.Y; j++)
                 {
                     SpriteRenderer InstantiatedSpriteRender = Instantiate(PiceSpritePrefab, new Vector3(StartPosition.position.x, StartPosition.position.y, StartPosition.position.z), Quaternion.identity, PuzzlePicesParent).GetComponent<SpriteRenderer>();
                     InstantiatedSpriteRender.sprite = SelectedPuzzleSprites[k];
@@ -93,7 +93,7 @@ public class PuzzleGenerator : MonoBehaviour
     /// <summary>
     /// Funzione che distrugge il puzzle (se presente) e ne istanzia uno nuovo
     /// </summary>
-    public void GeneratePuzzle(PuzzleScriptable _SelectedPuzzle)
+	public void GeneratePuzzle(PuzzleScriptable _SelectedPuzzle, Coordinates _coords)
     {
         if (InstantiatedPices[0] != null)
         {
@@ -104,7 +104,7 @@ public class PuzzleGenerator : MonoBehaviour
         }
         InstantiatedPices.Clear();
         CanGenerate = true;
-        InstantieteNewPuzzle(_SelectedPuzzle);
+		InstantieteNewPuzzle(_SelectedPuzzle, _coords);
     }
 
     /// <summary>
