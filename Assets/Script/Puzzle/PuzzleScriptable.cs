@@ -8,5 +8,5 @@ public class PuzzleScriptable : ScriptableObject {
     public Sprite DefaulImage;
     public Sprite OverlayImage;
     public Texture2D Puzzle;
-
+    public int PuzzleID;
 }

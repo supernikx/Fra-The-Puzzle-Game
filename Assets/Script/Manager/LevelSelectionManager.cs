@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
 
 public class LevelSelectionManager : MonoBehaviour
 {
     public GameObject PuzzleLevelPrefab;
     public Transform Content;
     public int LastLevelUnlocked;
-    public PuzzleScriptable[] PuzzleList;
+    public List<PuzzleScriptable> PuzzleList = new List<PuzzleScriptable>();
 
     public void Init()
     {
-        PuzzleList = Resources.LoadAll<PuzzleScriptable>("PuzzleScriptable");
-        for (int i = 0; i < PuzzleList.Length; i++)
+        PuzzleList = Resources.LoadAll<PuzzleScriptable>("PuzzleScriptable").ToList();
+        PuzzleList = PuzzleList.OrderBy(p => p.PuzzleID).ToList();
+        for (int i = 0; i < PuzzleList.Count; i++)
         {
             PuzzleLevelSelection NewLevel = Instantiate(PuzzleLevelPrefab, Content).GetComponent<PuzzleLevelSelection>();
             if (i < LastLevelUnlocked - 1)
