@@ -5,5 +5,5 @@ using UnityEngine;
 public class EventManager : MonoBehaviour {
 
     public delegate void GameEvents();
-    public GameEvents EndGame;
+    public static GameEvents EndLevel;
 }

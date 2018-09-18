@@ -228,10 +228,9 @@ MonoBehaviour:
     PuzzleSize:
       X: 0
       Y: 0
-  PiceSpritePrefab: {fileID: 1274427908999390, guid: 243ab2092f06deb4aa2832e75ab029b4,
+  PieceSpritePrefab: {fileID: 1274427908999390, guid: 243ab2092f06deb4aa2832e75ab029b4,
     type: 2}
   PuzzleParent: {fileID: 4695716247488336}
   SelectedPuzzle: {fileID: 0}
-  InstantiatedPices:
-  - {fileID: 0}
+  InstantiatedPieces: []
   CanGenerate: 0

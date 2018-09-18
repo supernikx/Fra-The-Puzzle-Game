@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,16 @@ public class UIManager : MonoBehaviour {
     public GameObject WinScreen;
 	public GameObject DifficultySelectionPanel;
     MenuType ActiveMenu = MenuType.MainMenu;
+
+    private void OnEnable()
+    {
+        EventManager.EndLevel += ShowWinScreen;
+    }
+    private void OnDisable()
+    {
+        EventManager.EndLevel -= ShowWinScreen;
+    }
+
 
     public void Init()
     {
@@ -95,6 +106,24 @@ public class UIManager : MonoBehaviour {
         LevelSelection.SetActive(false);
         WinScreen.SetActive(false);
 		DifficultySelectionPanel.SetActive (false);
+    }
+
+    /// <summary>
+    /// Funzione che chiama la coroutine per mostrare il WinScreen
+    /// </summary>
+    private void ShowWinScreen()
+    {
+        StartCoroutine(ShowWinScreenCoroutine());
+    }
+
+    /// <summary>
+    /// Coroutine che mostra il winscreen
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator ShowWinScreenCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        ToggleMenu(MenuType.WinScreen);
     }
 }
 

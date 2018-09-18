@@ -36,22 +36,32 @@ public class PuzzleGenerator : MonoBehaviour
     public DifficultySettings SelectedDifficultySettings;
 
     [Header("Generation Settings")]
-    public GameObject PiceSpritePrefab;
+    public GameObject PieceSpritePrefab;
     public Transform PuzzleParent;
     Vector3 Offset = new Vector3(0, 0, 0);
 
     [Header("Puzzles Images")]
     public PuzzleScriptable SelectedPuzzle;
     List<Sprite> SelectedPuzzleSprites = new List<Sprite>();
-    //Sprite[] SelectedPuzzleSprites;
-    public List<PuzzlePiece> InstantiatedPices = new List<PuzzlePiece>();
+    public List<PuzzlePiece> InstantiatedPieces = new List<PuzzlePiece>();
+    SpriteRenderer InvisiblePieceSpriteRenderer;
+    Sprite InvisibleSprite;
 
     public bool CanGenerate;
+
+    private void OnEnable()
+    {
+        EventManager.EndLevel += ShowLastPiece;
+    }
+    private void OnDisable()
+    {
+        EventManager.EndLevel -= ShowLastPiece;
+    }
 
     /// <summary>
     /// Funzione che istanzia il nuovo puzzle
     /// </summary>
-	private void InstantieteNewPuzzle(PuzzleScriptable _SelectedPuzzle, Difficulty _DifficultySelected)
+    private void InstantieteNewPuzzle(PuzzleScriptable _SelectedPuzzle, Difficulty _DifficultySelected)
     {
         if (CanGenerate)
         {
@@ -86,14 +96,14 @@ public class PuzzleGenerator : MonoBehaviour
             {
                 for (int j = 0; j < SelectedDifficultySettings.PuzzleSize.Y; j++)
                 {
-                    SpriteRenderer InstantiatedSpriteRender = Instantiate(PiceSpritePrefab, new Vector3(SelectedDifficultySettings.DifficultyParent.position.x, SelectedDifficultySettings.DifficultyParent.position.y, SelectedDifficultySettings.DifficultyParent.position.z), Quaternion.identity, PuzzleParent).GetComponent<SpriteRenderer>();
+                    SpriteRenderer InstantiatedSpriteRender = Instantiate(PieceSpritePrefab, new Vector3(SelectedDifficultySettings.DifficultyParent.position.x, SelectedDifficultySettings.DifficultyParent.position.y, SelectedDifficultySettings.DifficultyParent.position.z), Quaternion.identity, PuzzleParent).GetComponent<SpriteRenderer>();
                     InstantiatedSpriteRender.sprite = SelectedPuzzleSprites[k];
                     InstantiatedSpriteRender.gameObject.GetComponent<BoxCollider2D>().size = InstantiatedSpriteRender.sprite.bounds.size;
                     PuzzlePiece InstantiatedPuzzlePice = InstantiatedSpriteRender.gameObject.GetComponent<PuzzlePiece>();
                     InstantiatedPuzzlePice.data = new PuzzlePieceData(InstantiatedSpriteRender.sprite, InstantiatedSpriteRender.gameObject, new Coordinates(i, j));
                     if (i == SelectedDifficultySettings.PuzzleSize.X - 1 && j == SelectedDifficultySettings.PuzzleSize.Y - 1)
                         InstantiatedPuzzlePice.data.InvisiblePice = true;
-                    InstantiatedPices.Add(InstantiatedPuzzlePice);
+                    InstantiatedPieces.Add(InstantiatedPuzzlePice);
                     k++;
                 }
             }
@@ -105,16 +115,19 @@ public class PuzzleGenerator : MonoBehaviour
             {
                 for (int j = 0; j < SelectedDifficultySettings.PuzzleSize.Y; j++)
                 {
-                    InstantiatedPices[k].gameObject.transform.position = new Vector3(SelectedDifficultySettings.DifficultyParent.position.x + Offset.x, SelectedDifficultySettings.DifficultyParent.position.y + Offset.y, SelectedDifficultySettings.DifficultyParent.position.z);
-                    InstantiatedPices[k].data.ActualPosition = new Coordinates(i, j);
-                    Offset.x += InstantiatedPices[k].data.PiceSprite.bounds.size.x * PiceSpritePrefab.transform.localScale.x;
-                    if (i == SelectedDifficultySettings.PuzzleSize.X - 1 && j == SelectedDifficultySettings.PuzzleSize.Y - 1)
+                    InstantiatedPieces[k].gameObject.transform.position = new Vector3(SelectedDifficultySettings.DifficultyParent.position.x + Offset.x, SelectedDifficultySettings.DifficultyParent.position.y + Offset.y, SelectedDifficultySettings.DifficultyParent.position.z);
+                    InstantiatedPieces[k].data.ActualPosition = new Coordinates(i, j);
+                    Offset.x += InstantiatedPieces[k].data.PiceSprite.bounds.size.x * PieceSpritePrefab.transform.localScale.x;
+                    if (InstantiatedPieces[k].data.InvisiblePice)
                     {
-                        InstantiatedPices[k].gameObject.GetComponent<SpriteRenderer>().sprite = null;
+                        InvisiblePieceSpriteRenderer = InstantiatedPieces[k].gameObject.GetComponent<SpriteRenderer>();
+                        InvisibleSprite = InvisiblePieceSpriteRenderer.sprite;
+                        InvisiblePieceSpriteRenderer.sprite = null;
+
                     }
                     k++;
                 }
-                Offset.y -= InstantiatedPices[k - 1].data.PiceSprite.bounds.size.y * PiceSpritePrefab.transform.localScale.y;
+                Offset.y -= InstantiatedPieces[k - 1].data.PiceSprite.bounds.size.y * PieceSpritePrefab.transform.localScale.y;
                 Offset.x = 0;
             }
             k = 0;
@@ -131,16 +144,19 @@ public class PuzzleGenerator : MonoBehaviour
     /// </summary>
 	public void GeneratePuzzle(PuzzleScriptable _SelectedPuzzle, Difficulty _DifficultySelected)
     {
-        InstantiatedPices.Clear();
+        InstantiatedPieces.Clear();
         CanGenerate = true;
         InstantieteNewPuzzle(_SelectedPuzzle, _DifficultySelected);
     }
 
+    /// <summary>
+    /// Funzione che distrugge il puzzle attuale
+    /// </summary>
     public void DestroyPuzzle()
     {
-        if (InstantiatedPices[0] != null)
+        if (InstantiatedPieces[0] != null)
         {
-            foreach (PuzzlePiece p in InstantiatedPices)
+            foreach (PuzzlePiece p in InstantiatedPieces)
             {
                 Destroy(p.gameObject);
             }
@@ -153,22 +169,30 @@ public class PuzzleGenerator : MonoBehaviour
     private void ShufflePuzzlePices()
     {
         PuzzlePiece temp;
-        for (int i = 0; i < InstantiatedPices.Count; i++)
+        for (int i = 0; i < InstantiatedPieces.Count; i++)
         {
-            int rnd = UnityEngine.Random.Range(0, InstantiatedPices.Count);
-            temp = InstantiatedPices[rnd];
-            InstantiatedPices[rnd] = InstantiatedPices[i];
-            InstantiatedPices[i] = temp;
+            int rnd = UnityEngine.Random.Range(0, InstantiatedPieces.Count);
+            temp = InstantiatedPieces[rnd];
+            InstantiatedPieces[rnd] = InstantiatedPieces[i];
+            InstantiatedPieces[i] = temp;
         }
 
-        for (int i = 0; i < InstantiatedPices.Count; i++)
+        for (int i = 0; i < InstantiatedPieces.Count; i++)
         {
-            if (InstantiatedPices[i].data.InvisiblePice)
+            if (InstantiatedPieces[i].data.InvisiblePice)
             {
-                temp = InstantiatedPices[InstantiatedPices.Count - 1];
-                InstantiatedPices[InstantiatedPices.Count - 1] = InstantiatedPices[i];
-                InstantiatedPices[i] = temp;
+                temp = InstantiatedPieces[InstantiatedPieces.Count - 1];
+                InstantiatedPieces[InstantiatedPieces.Count - 1] = InstantiatedPieces[i];
+                InstantiatedPieces[i] = temp;
             }
         }
+    }
+
+    /// <summary>
+    /// Funzione che mostra l'ultimo pezzo del puzzle (quello invisibile)
+    /// </summary>
+    private void ShowLastPiece()
+    {
+        InvisiblePieceSpriteRenderer.sprite = InvisibleSprite;
     }
 }

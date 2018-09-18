@@ -12,42 +12,37 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public UIManager ui;
     [HideInInspector]
-    public EventManager ev;
-    [HideInInspector]
     public LevelSelectionManager lvl;
-	[HideInInspector]
-	public DifficultyManager dm;
+    [HideInInspector]
+    public DifficultyManager dm;
+    [HideInInspector]
+    public PuzzleScriptable PlayingPuzzle;
 
-    PuzzleScriptable PlayingPuzzle;
-
-    bool GameEnded;
+    bool LevelEnded;
     bool Moving;
 
     private void OnEnable()
     {
-        ev.EndGame += EndGame;
+        EventManager.EndLevel += EndLevel;
     }
     private void OnDisable()
     {
-        ev.EndGame -= EndGame;
+        EventManager.EndLevel -= EndLevel;
     }
 
     private void Awake()
     {
         instance = this;
         gen = FindObjectOfType<PuzzleGenerator>();
-        ev = GetComponent<EventManager>();
         ui = FindObjectOfType<UIManager>();
         lvl = FindObjectOfType<LevelSelectionManager>();
-		dm = FindObjectOfType<DifficultyManager>();
+        dm = FindObjectOfType<DifficultyManager>();
     }
 
     private void Start()
     {
         ui.Init();
         lvl.Init();
-
-        GameEnded = false;
         Moving = false;
     }
 
@@ -64,7 +59,11 @@ public class GameManager : MonoBehaviour
                     ui.ToggleMenu(MenuType.MainMenu);
                     break;
                 case MenuType.WinScreen:
-                    ui.ToggleMenu(MenuType.LevelSelection);
+                    if (LevelEnded)
+                    {
+                        ui.ToggleMenu(MenuType.LevelSelection);
+                        gen.DestroyPuzzle();
+                    }
                     break;
                 case MenuType.PauseMenu:
                     ui.ToggleMenu(MenuType.None);
@@ -73,23 +72,29 @@ public class GameManager : MonoBehaviour
                     ui.ToggleMenu(MenuType.LevelSelection);
                     break;
                 case MenuType.None:
-                    gen.DestroyPuzzle();
-                    ui.ToggleMenu(MenuType.LevelSelection);
+                    if (!LevelEnded)
+                    {
+                        gen.DestroyPuzzle();
+                        ui.ToggleMenu(MenuType.LevelSelection);
+                    }
                     break;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            if (EventManager.EndLevel != null)
+                EventManager.EndLevel();
     }
 
     /// <summary>
     /// Funzione che starta il gioco
     /// </summary>
-	public void StartGame(PuzzleScriptable _PuzzleToPlay, Difficulty _DifficultySelected)
+    public void StartGame(PuzzleScriptable _PuzzleToPlay, Difficulty _DifficultySelected)
     {
         PlayingPuzzle = _PuzzleToPlay;
-		gen.GeneratePuzzle(_PuzzleToPlay, _DifficultySelected);
+        gen.GeneratePuzzle(_PuzzleToPlay, _DifficultySelected);
+        LevelEnded = false;
     }
-
-
 
     /// <summary>
     /// Funzione che controlla se il pezzo passato come parametro può spostarsi
@@ -98,7 +103,7 @@ public class GameManager : MonoBehaviour
     public void CheckIfCanMove(PuzzlePieceData _pice)
     {
         PuzzlePieceData PiceToCompare = null;
-        if (!GameEnded && !Moving)
+        if (!LevelEnded && !Moving)
         {
             if (!_pice.InvisiblePice)
             {
@@ -146,10 +151,10 @@ public class GameManager : MonoBehaviour
     /// Funzione che controlla se i pezzi sono al posto giusto
     /// </summary>
     /// <returns></returns>
-    public bool CheckPicePositions()
+    public void CheckPicePositions()
     {
         bool win = true;
-        foreach (PuzzlePiece pice in gen.InstantiatedPices)
+        foreach (PuzzlePiece pice in gen.InstantiatedPieces)
         {
             if (!pice.CheckPosition())
             {
@@ -160,11 +165,9 @@ public class GameManager : MonoBehaviour
 
         if (win)
         {
-            if (ev.EndGame != null)
-                ev.EndGame();
-            return true;
+            if (EventManager.EndLevel != null)
+                EventManager.EndLevel();
         }
-        return false;
     }
 
     /// <summary>
@@ -175,7 +178,7 @@ public class GameManager : MonoBehaviour
     /// <returns></returns>
     public PuzzlePieceData GetPiceData(int x, int y)
     {
-        foreach (PuzzlePiece pice in gen.InstantiatedPices)
+        foreach (PuzzlePiece pice in gen.InstantiatedPieces)
         {
             if (pice.data.ActualPosition.X == x && pice.data.ActualPosition.Y == y)
                 return pice.data;
@@ -217,8 +220,11 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Funzione che viene chiamata quando il gioco finisce
     /// </summary>
-    private void EndGame()
+    private void EndLevel()
     {
-        Debug.Log("Gioco FInito");
+        Debug.Log("Livello Completato");
+        LevelEnded = true;        
+        lvl.UnlockNextPuzzle(PlayingPuzzle);
+        PlayingPuzzle = null;
     }
 }

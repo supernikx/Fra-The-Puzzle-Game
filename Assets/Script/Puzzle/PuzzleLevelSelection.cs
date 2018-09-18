@@ -54,6 +54,34 @@ public class PuzzleLevelSelection : MonoBehaviour
             Debug.Log("Livello Bloccato");
     }
 
+    /// <summary>
+    /// Funzione che sblocca il puzzle
+    /// </summary>
+    public void UnlockPuzzle()
+    {
+        Locked = false;
+        LockerImage.sprite = OpenLockerSprite;
+    }
+
+    /// <summary>
+    /// Funzioe che completa il puzzle
+    /// </summary>
+    public void CompletePuzzle(Sprite _CompletePuzzleImage)
+    {
+        PuzzleImage.sprite = _CompletePuzzleImage;
+        Locked = false;
+        LockerImage.enabled = false;
+    }
+
+    /// <summary>
+    /// Funzione che ritorna l'id del puzzle
+    /// </summary>
+    /// <returns></returns>
+    public int GetPuzzleID()
+    {
+        return PuzzleID;
+    }
+
 }
 
 public enum LockStatus
