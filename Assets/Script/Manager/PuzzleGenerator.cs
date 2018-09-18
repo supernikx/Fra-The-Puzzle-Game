@@ -136,6 +136,8 @@ public class PuzzleGenerator : MonoBehaviour
             CanGenerate = false;
             Debug.Log("Puzzle Generato");
             GameManager.instance.ui.ToggleMenu(MenuType.None);
+			AudioManager.instance.ToggleMenuVolume (false);
+			AudioManager.instance.TogglePlayVolume (true);
         }
     }
 

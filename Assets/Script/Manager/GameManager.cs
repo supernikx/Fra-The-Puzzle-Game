@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+		AudioManager.instance.Play ("MenuTheme");
+		AudioManager.instance.Play ("PlayTheme");
+
         ui.Init();
         lvl.Init();
         Moving = false;

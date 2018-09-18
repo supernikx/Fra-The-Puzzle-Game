@@ -40,9 +40,13 @@ public class UIManager : MonoBehaviour {
         {
             case MenuType.MainMenu:
                 MainMenu.SetActive(true);
+			AudioManager.instance.TogglePlayVolume (false);
+			AudioManager.instance.ToggleMenuVolume (true);
                 break;
             case MenuType.LevelSelection:
                 LevelSelection.SetActive(true);
+			AudioManager.instance.TogglePlayVolume (false);
+			AudioManager.instance.ToggleMenuVolume (true);
                 break;
             case MenuType.PauseMenu:
                 break;
@@ -51,6 +55,8 @@ public class UIManager : MonoBehaviour {
                 break;
 			case MenuType.DifficultyMenu:
 				DifficultySelectionPanel.SetActive (true);
+			AudioManager.instance.TogglePlayVolume (false);
+			AudioManager.instance.ToggleMenuVolume (true);
 				break;
             default:
                 break;
@@ -62,7 +68,7 @@ public class UIManager : MonoBehaviour {
     /// </summary>
     /// <param name="_type"></param>
     public void ToggleMenu(int _typeIndex)
-    {
+    {		
         DisableAllMenus();
         ActiveMenu = (MenuType)_typeIndex;
         if (_typeIndex == 0)
@@ -71,9 +77,13 @@ public class UIManager : MonoBehaviour {
         {
             case (int)MenuType.MainMenu:
                 MainMenu.SetActive(true);
+			AudioManager.instance.TogglePlayVolume (false);
+			AudioManager.instance.ToggleMenuVolume (true);
                 break;
             case (int)MenuType.LevelSelection:
                 LevelSelection.SetActive(true);
+			AudioManager.instance.TogglePlayVolume (false);
+			AudioManager.instance.ToggleMenuVolume (true);
                 break;
             case (int)MenuType.PauseMenu:
                 break;
@@ -82,6 +92,8 @@ public class UIManager : MonoBehaviour {
                 break;
 			case (int)MenuType.DifficultyMenu:
 				DifficultySelectionPanel.SetActive(true);
+			AudioManager.instance.TogglePlayVolume (false);
+			AudioManager.instance.ToggleMenuVolume (true);
 				break;
             default:
                 break;
