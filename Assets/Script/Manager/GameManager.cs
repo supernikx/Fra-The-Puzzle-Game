@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
 		AudioManager.instance.Play ("MenuTheme");
 		AudioManager.instance.Play ("PlayTheme");
-
+        Advertisement.Initialize("2806326");
         ui.Init();
         lvl.Init();
         Moving = false;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
                 case MenuType.WinScreen:
                     if (LevelEnded)
                     {
+                        Advertisement.Show("video");
                         ui.ToggleMenu(MenuType.LevelSelection);
                         gen.DestroyPuzzle();
                     }
