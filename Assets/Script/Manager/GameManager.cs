@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,9 +47,13 @@ public class GameManager : MonoBehaviour
 		AudioManager.instance.Play ("MenuTheme");
 		AudioManager.instance.Play ("PlayTheme");
         Advertisement.Initialize("2806326");
+        PlayGamesPlatform.Activate();
         ui.Init();
         lvl.Init();
         Moving = false;
+        PlayGamesClientConfiguration Config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
+        PlayGamesPlatform.InitializeInstance(Config);
+        ui.OnGoogleConnectionResponse(PlayGamesPlatform.Instance.IsAuthenticated());
     }
 
     private void Update()
@@ -220,6 +226,14 @@ public class GameManager : MonoBehaviour
     public void InstagramButton()
     {
         Application.OpenURL("https://www.instagram.com/fradesign.it/");
+    }
+
+    /// <summary>
+    /// Funzione che prova ad eseguire il login 
+    /// </summary>
+    public void GoogleAuthentication()
+    {
+        PlayGamesPlatform.Instance.Authenticate((bool success) => ui.OnGoogleConnectionResponse(success));
     }
 
     /// <summary>

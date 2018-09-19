@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     [Header("Menu Holders")]
@@ -9,6 +8,11 @@ public class UIManager : MonoBehaviour {
     public GameObject LevelSelection;
     public GameObject WinScreen;
 	public GameObject DifficultySelectionPanel;
+
+    [Header("Google Holders")]
+    public Button GoogleLoginButton;
+    public GameObject GoogleLoginImage;
+
     MenuType ActiveMenu = MenuType.MainMenu;
 
     private void OnEnable()
@@ -136,6 +140,24 @@ public class UIManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         ToggleMenu(MenuType.WinScreen);
+    }
+
+    /// <summary>
+    /// Funzione che attiva l'ui necessaria in base all'eseguito login
+    /// </summary>
+    /// <param name="authenticated"></param>
+    public void OnGoogleConnectionResponse(bool authenticated)
+    {
+        if (authenticated)
+        {
+            GoogleLoginButton.enabled = false;
+            GoogleLoginImage.SetActive(true);
+        }
+        else
+        {
+            GoogleLoginButton.enabled = true;
+            GoogleLoginImage.SetActive(false);
+        }
     }
 }
 
