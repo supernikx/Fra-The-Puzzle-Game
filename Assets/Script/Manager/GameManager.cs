@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public DifficultyManager dm;
     [HideInInspector]
     public PuzzleScriptable PlayingPuzzle;
+	[HideInInspector]
+	public GalleryManager galleryManager;
 
     bool LevelEnded;
     bool Moving;
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         ui = FindObjectOfType<UIManager>();
         lvl = FindObjectOfType<LevelSelectionManager>();
         dm = FindObjectOfType<DifficultyManager>();
+		galleryManager = FindObjectOfType<GalleryManager> ();
     }
 
     private void Start()
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
 		AudioManager.instance.Play ("PlayTheme");
         ui.Init();
         lvl.Init();
+		galleryManager.Init ();
         Moving = false;
     }
 

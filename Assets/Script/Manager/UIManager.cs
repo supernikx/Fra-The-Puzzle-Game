@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject LevelSelection;
     public GameObject WinScreen;
     public GameObject DifficultySelectionPanel;
+	public GameObject Gallery;
     public Animator PauseMenu;
 
     MenuType ActiveMenu = MenuType.MainMenu;
@@ -63,6 +64,11 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.TogglePlayVolume(false);
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
+			case MenuType.Gallery:
+				Gallery.SetActive(true);
+				AudioManager.instance.TogglePlayVolume(false);
+				AudioManager.instance.ToggleMenuVolume(true);
+				break;
             default:
                 break;
         }
@@ -103,6 +109,11 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.TogglePlayVolume(false);
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
+			case (int)MenuType.Gallery:
+				Gallery.SetActive(true);
+				AudioManager.instance.TogglePlayVolume(false);
+				AudioManager.instance.ToggleMenuVolume(true);
+				break;
             default:
                 break;
         }
@@ -126,6 +137,7 @@ public class UIManager : MonoBehaviour
         LevelSelection.SetActive(false);
         WinScreen.SetActive(false);
         DifficultySelectionPanel.SetActive(false);
+		Gallery.SetActive (false);
         if (GetActiveMenu() == MenuType.PauseMenu)
         {
             PauseMenu.SetTrigger("UnPause");
@@ -204,4 +216,5 @@ public enum MenuType
     WinScreen = 3,
     PauseMenu = 4,
     DifficultyMenu = 5,
+	Gallery = 6
 }
