@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Advertisements;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,14 +20,19 @@ public class GameManager : MonoBehaviour
 
     bool LevelEnded;
     bool Moving;
+    bool Pause;
 
     private void OnEnable()
     {
         EventManager.EndLevel += EndLevel;
+        EventManager.Pause += (() => Pause = true);
+        EventManager.UnPause += (() => Pause = false);
     }
     private void OnDisable()
     {
         EventManager.EndLevel -= EndLevel;
+        EventManager.Pause -= (() => Pause = true);
+        EventManager.UnPause -= (() => Pause = false);
     }
 
     private void Awake()
@@ -44,7 +48,6 @@ public class GameManager : MonoBehaviour
     {
 		AudioManager.instance.Play ("MenuTheme");
 		AudioManager.instance.Play ("PlayTheme");
-        Advertisement.Initialize("2806326");
         ui.Init();
         lvl.Init();
         Moving = false;
@@ -65,7 +68,6 @@ public class GameManager : MonoBehaviour
                 case MenuType.WinScreen:
                     if (LevelEnded)
                     {
-                        Advertisement.Show("video");
                         ui.ToggleMenu(MenuType.LevelSelection);
                         gen.DestroyPuzzle();
                     }
@@ -77,11 +79,7 @@ public class GameManager : MonoBehaviour
                     ui.ToggleMenu(MenuType.LevelSelection);
                     break;
                 case MenuType.None:
-                    if (!LevelEnded)
-                    {
-                        gen.DestroyPuzzle();
-                        ui.ToggleMenu(MenuType.LevelSelection);
-                    }
+                    ui.ToggleMenu(MenuType.PauseMenu);
                     break;
             }
         }
@@ -108,7 +106,7 @@ public class GameManager : MonoBehaviour
     public void CheckIfCanMove(PuzzlePieceData _pice)
     {
         PuzzlePieceData PiceToCompare = null;
-        if (!LevelEnded && !Moving)
+        if (!LevelEnded && !Moving && !Pause)
         {
             if (!_pice.InvisiblePice)
             {

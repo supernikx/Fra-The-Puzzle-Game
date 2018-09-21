@@ -2,16 +2,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour
+{
     [Header("Menu Holders")]
     public GameObject MainMenu;
     public GameObject LevelSelection;
     public GameObject WinScreen;
-	public GameObject DifficultySelectionPanel;
-
-    [Header("Google Holders")]
-    public Button GoogleLoginButton;
-    public GameObject GoogleLoginImage;
+    public GameObject DifficultySelectionPanel;
+    public Animator PauseMenu;
 
     MenuType ActiveMenu = MenuType.MainMenu;
 
@@ -44,27 +42,30 @@ public class UIManager : MonoBehaviour {
         {
             case MenuType.MainMenu:
                 MainMenu.SetActive(true);
-			AudioManager.instance.TogglePlayVolume (false);
-			AudioManager.instance.ToggleMenuVolume (true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
                 break;
             case MenuType.LevelSelection:
                 LevelSelection.SetActive(true);
-			AudioManager.instance.TogglePlayVolume (false);
-			AudioManager.instance.ToggleMenuVolume (true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
                 break;
             case MenuType.PauseMenu:
+                PauseMenu.GetComponent<Animator>().SetTrigger("Pause");
+                if (EventManager.Pause != null)
+                    EventManager.Pause();
                 break;
             case MenuType.WinScreen:
                 WinScreen.SetActive(true);
                 break;
-			case MenuType.DifficultyMenu:
-				DifficultySelectionPanel.SetActive (true);
-			AudioManager.instance.TogglePlayVolume (false);
-			AudioManager.instance.ToggleMenuVolume (true);
-				break;
+            case MenuType.DifficultyMenu:
+                DifficultySelectionPanel.SetActive(true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
+                break;
             default:
                 break;
-        }        
+        }
     }
 
     /// <summary>
@@ -72,7 +73,7 @@ public class UIManager : MonoBehaviour {
     /// </summary>
     /// <param name="_type"></param>
     public void ToggleMenu(int _typeIndex)
-    {		
+    {
         DisableAllMenus();
         ActiveMenu = (MenuType)_typeIndex;
         if (_typeIndex == 0)
@@ -81,27 +82,30 @@ public class UIManager : MonoBehaviour {
         {
             case (int)MenuType.MainMenu:
                 MainMenu.SetActive(true);
-			AudioManager.instance.TogglePlayVolume (false);
-			AudioManager.instance.ToggleMenuVolume (true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
                 break;
             case (int)MenuType.LevelSelection:
                 LevelSelection.SetActive(true);
-			AudioManager.instance.TogglePlayVolume (false);
-			AudioManager.instance.ToggleMenuVolume (true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
                 break;
             case (int)MenuType.PauseMenu:
+                PauseMenu.GetComponent<Animator>().SetTrigger("Pause");
+                if (EventManager.Pause != null)
+                    EventManager.Pause();
                 break;
             case (int)MenuType.WinScreen:
                 WinScreen.SetActive(true);
                 break;
-			case (int)MenuType.DifficultyMenu:
-				DifficultySelectionPanel.SetActive(true);
-			AudioManager.instance.TogglePlayVolume (false);
-			AudioManager.instance.ToggleMenuVolume (true);
-				break;
+            case (int)MenuType.DifficultyMenu:
+                DifficultySelectionPanel.SetActive(true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
+                break;
             default:
                 break;
-        }        
+        }
     }
 
     /// <summary>
@@ -121,7 +125,13 @@ public class UIManager : MonoBehaviour {
         MainMenu.SetActive(false);
         LevelSelection.SetActive(false);
         WinScreen.SetActive(false);
-		DifficultySelectionPanel.SetActive (false);
+        DifficultySelectionPanel.SetActive(false);
+        if (GetActiveMenu() == MenuType.PauseMenu)
+        {
+            PauseMenu.SetTrigger("UnPause");
+            if (EventManager.UnPause != null)
+                EventManager.UnPause();
+        }
     }
 
     /// <summary>
@@ -142,23 +152,48 @@ public class UIManager : MonoBehaviour {
         ToggleMenu(MenuType.WinScreen);
     }
 
-    /// <summary>
-    /// Funzione che attiva l'ui necessaria in base all'eseguito login
-    /// </summary>
-    /// <param name="authenticated"></param>
-    public void OnGoogleConnectionResponse(bool authenticated)
+    #region Pause Menu
+    [SerializeField]
+    float PauseMenuSwipeResistence;
+
+    Vector3 TouchInitialPosition;
+    public void PauseMenuBeginDrag()
     {
-        if (authenticated)
+        if (GetActiveMenu() == MenuType.None || GetActiveMenu() == MenuType.PauseMenu)
         {
-            GoogleLoginButton.enabled = false;
-            GoogleLoginImage.SetActive(true);
+            TouchInitialPosition = Input.mousePosition;
         }
         else
         {
-            GoogleLoginButton.enabled = true;
-            GoogleLoginImage.SetActive(false);
+            Debug.Log("Non puoi mettere in pausa ora");
         }
     }
+
+    public void PauseMenuEndDrag()
+    {
+        if (GetActiveMenu() == MenuType.None || GetActiveMenu() == MenuType.PauseMenu)
+        {
+            Vector2 deltaSwipe = TouchInitialPosition - Input.mousePosition;
+            if (Mathf.Abs(deltaSwipe.y) > PauseMenuSwipeResistence)
+            {
+                if (deltaSwipe.y < 0)
+                {
+                    if (GetActiveMenu() == MenuType.PauseMenu)
+                    {
+                        ToggleMenu(MenuType.None);
+                    }
+                }
+                else
+                {
+                    if (GetActiveMenu() == MenuType.None)
+                    {                        
+                        ToggleMenu(MenuType.PauseMenu);
+                    }
+                }
+            }
+        }
+    }
+    #endregion
 }
 
 public enum MenuType
@@ -168,5 +203,5 @@ public enum MenuType
     LevelSelection = 2,
     WinScreen = 3,
     PauseMenu = 4,
-	DifficultyMenu = 5
+    DifficultyMenu = 5,
 }
