@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
                 case MenuType.DifficultyMenu:
                     ui.ToggleMenu(MenuType.LevelSelection);
                     break;
+                case MenuType.Gallery:
+                    ui.ToggleMenu(MenuType.MainMenu);
+                    break;
                 case MenuType.None:
                     ui.ToggleMenu(MenuType.PauseMenu);
                     break;

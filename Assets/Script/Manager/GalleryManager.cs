@@ -12,7 +12,7 @@ public class GalleryManager : MonoBehaviour {
 	public void Init(){
 		for (int i = 0; i < GameManager.instance.lvl.PuzzleList.Count; i++) {
 			Image instantiatedGalleryImage = Instantiate (GalleryImagePrefab, Content);
-			if (i < GameManager.instance.lvl.LastLevelUnlocked)
+			if (i < GameManager.instance.lvl.LastLevelUnlocked - 1)
 				instantiatedGalleryImage.sprite = GameManager.instance.lvl.PuzzleList [i].DefaulImage;
 			else
 				instantiatedGalleryImage.sprite = GameManager.instance.lvl.PuzzleList [i].OverlayImage;
@@ -23,7 +23,7 @@ public class GalleryManager : MonoBehaviour {
 
 	public void Refresh(){
 		for (int i = 0; i < GalleryImages.Count; i++) {
-			if (i < GameManager.instance.lvl.LastLevelUnlocked)
+			if (i < GameManager.instance.lvl.LastLevelUnlocked - 1)
 				GalleryImages[i].sprite = GameManager.instance.lvl.PuzzleList [i].DefaulImage;
 			else
 				GalleryImages[i].sprite = GameManager.instance.lvl.PuzzleList [i].OverlayImage;

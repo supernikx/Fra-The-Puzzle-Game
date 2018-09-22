@@ -5,23 +5,26 @@ using UnityEngine.EventSystems;
 public class PuzzlePieceData
 {
     public Sprite PiceSprite;
+    public int SpriteID;
     public GameObject gameObject;
     public Coordinates RightPosition;
     public Coordinates ActualPosition;
     public bool InvisiblePice;
 
-    public PuzzlePieceData(Sprite _sprite, GameObject _gameObject, Coordinates _right)
+    public PuzzlePieceData(Sprite _sprite,int _SpriteID, GameObject _gameObject, Coordinates _right)
     {
         PiceSprite = _sprite;
+        SpriteID = _SpriteID;
         gameObject = _gameObject;
         RightPosition = _right;
         InvisiblePice = false;
     }
 }
 
+[System.Serializable]
 public class PuzzlePiece : MonoBehaviour
 {
-
+    [SerializeField]
     public PuzzlePieceData data;
 
     private void OnMouseDown()

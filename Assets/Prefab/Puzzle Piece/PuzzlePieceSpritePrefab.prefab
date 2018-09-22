@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     PiceSprite: {fileID: 0}
+    SpriteID: 0
     gameObject: {fileID: 0}
     RightPosition:
       X: 0

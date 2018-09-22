@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 [Serializable]
 public class Coordinates
@@ -42,12 +43,15 @@ public class PuzzleGenerator : MonoBehaviour
 
     [Header("Puzzles Images")]
     public PuzzleScriptable SelectedPuzzle;
+    public Difficulty DifficultySelected;
     List<Sprite> SelectedPuzzleSprites = new List<Sprite>();
+    [SerializeField]
     public List<PuzzlePiece> InstantiatedPieces = new List<PuzzlePiece>();
     SpriteRenderer InvisiblePieceSpriteRenderer;
     Sprite InvisibleSprite;
 
     public bool CanGenerate;
+    PieceSaveClass DataToJson = new PieceSaveClass();
 
     private void OnEnable()
     {
@@ -58,6 +62,16 @@ public class PuzzleGenerator : MonoBehaviour
         EventManager.EndLevel -= ShowLastPiece;
     }
 
+    [SerializeField]
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SavePuzzleStatus();
+        }
+    }
+
     /// <summary>
     /// Funzione che istanzia il nuovo puzzle
     /// </summary>
@@ -65,7 +79,8 @@ public class PuzzleGenerator : MonoBehaviour
     {
         if (CanGenerate)
         {
-            switch (_DifficultySelected)
+            DifficultySelected = _DifficultySelected;
+            switch (DifficultySelected)
             {
                 case Difficulty.Easy:
                     SelectedDifficultySettings = PuzzleDifficultySettingsEasy;
@@ -100,7 +115,7 @@ public class PuzzleGenerator : MonoBehaviour
                     InstantiatedSpriteRender.sprite = SelectedPuzzleSprites[k];
                     InstantiatedSpriteRender.gameObject.GetComponent<BoxCollider2D>().size = InstantiatedSpriteRender.sprite.bounds.size;
                     PuzzlePiece InstantiatedPuzzlePice = InstantiatedSpriteRender.gameObject.GetComponent<PuzzlePiece>();
-                    InstantiatedPuzzlePice.data = new PuzzlePieceData(InstantiatedSpriteRender.sprite, InstantiatedSpriteRender.gameObject, new Coordinates(i, j));
+                    InstantiatedPuzzlePice.data = new PuzzlePieceData(InstantiatedSpriteRender.sprite, k, InstantiatedSpriteRender.gameObject, new Coordinates(i, j));
                     if (i == SelectedDifficultySettings.PuzzleSize.X - 1 && j == SelectedDifficultySettings.PuzzleSize.Y - 1)
                         InstantiatedPuzzlePice.data.InvisiblePice = true;
                     InstantiatedPieces.Add(InstantiatedPuzzlePice);
@@ -110,25 +125,28 @@ public class PuzzleGenerator : MonoBehaviour
             k = 0;
             Debug.Log("Puzzle Inizializzato");
 
-            ShufflePuzzlePices();
-            for (int i = 0; i < SelectedDifficultySettings.PuzzleSize.X; i++)
+            if (!ResetPreviousPuzzle(SelectedPuzzle.name + DifficultySelected.ToString()))
             {
-                for (int j = 0; j < SelectedDifficultySettings.PuzzleSize.Y; j++)
+                ShufflePuzzlePices();
+                for (int i = 0; i < SelectedDifficultySettings.PuzzleSize.X; i++)
                 {
-                    InstantiatedPieces[k].gameObject.transform.position = new Vector3(SelectedDifficultySettings.DifficultyParent.position.x + Offset.x, SelectedDifficultySettings.DifficultyParent.position.y + Offset.y, SelectedDifficultySettings.DifficultyParent.position.z);
-                    InstantiatedPieces[k].data.ActualPosition = new Coordinates(i, j);
-                    Offset.x += InstantiatedPieces[k].data.PiceSprite.bounds.size.x * PieceSpritePrefab.transform.localScale.x;
-                    if (InstantiatedPieces[k].data.InvisiblePice)
+                    for (int j = 0; j < SelectedDifficultySettings.PuzzleSize.Y; j++)
                     {
-                        InvisiblePieceSpriteRenderer = InstantiatedPieces[k].gameObject.GetComponent<SpriteRenderer>();
-                        InvisibleSprite = InvisiblePieceSpriteRenderer.sprite;
-                        InvisiblePieceSpriteRenderer.sprite = null;
+                        InstantiatedPieces[k].gameObject.transform.position = new Vector3(SelectedDifficultySettings.DifficultyParent.position.x + Offset.x, SelectedDifficultySettings.DifficultyParent.position.y + Offset.y, SelectedDifficultySettings.DifficultyParent.position.z);
+                        InstantiatedPieces[k].data.ActualPosition = new Coordinates(i, j);
+                        Offset.x += InstantiatedPieces[k].data.PiceSprite.bounds.size.x * PieceSpritePrefab.transform.localScale.x;
+                        if (InstantiatedPieces[k].data.InvisiblePice)
+                        {
+                            InvisiblePieceSpriteRenderer = InstantiatedPieces[k].gameObject.GetComponent<SpriteRenderer>();
+                            InvisibleSprite = InvisiblePieceSpriteRenderer.sprite;
+                            InvisiblePieceSpriteRenderer.sprite = null;
 
+                        }
+                        k++;
                     }
-                    k++;
+                    Offset.y -= InstantiatedPieces[k - 1].data.PiceSprite.bounds.size.y * PieceSpritePrefab.transform.localScale.y;
+                    Offset.x = 0;
                 }
-                Offset.y -= InstantiatedPieces[k - 1].data.PiceSprite.bounds.size.y * PieceSpritePrefab.transform.localScale.y;
-                Offset.x = 0;
             }
             k = 0;
             Offset.x = 0;
@@ -136,8 +154,9 @@ public class PuzzleGenerator : MonoBehaviour
             CanGenerate = false;
             Debug.Log("Puzzle Generato");
             GameManager.instance.ui.ToggleMenu(MenuType.None);
-			AudioManager.instance.ToggleMenuVolume (false);
-			AudioManager.instance.TogglePlayVolume (true);
+            AudioManager.instance.ToggleMenuVolume(false);
+            AudioManager.instance.TogglePlayVolume(true);
+
         }
     }
 
@@ -163,6 +182,53 @@ public class PuzzleGenerator : MonoBehaviour
                 Destroy(p.gameObject);
             }
         }
+    }
+
+    /// <summary>
+    /// Funzione che salva lo stato attuale del puzzle
+    /// </summary>
+    public void SavePuzzleStatus()
+    {
+        //Imposto il puzzle da salvare
+        DataToJson.SetPuzzleData(InstantiatedPieces);
+
+        //Salvo il puzzle in una stringa Json nel playerpref dell'ID del puzzle attuale
+        PlayerPrefs.SetString(SelectedPuzzle.name + DifficultySelected.ToString(), JsonUtility.ToJson(DataToJson));
+    }
+
+    /// <summary>
+    /// Funzione che resetta il puzzle in base al puzzleID passato come parametro (puzzlename+puzzledifficulty)
+    /// ritorna true se l'ha trovato altrimenti ritorna false
+    /// </summary>
+    /// <param name="SavedPuzzleID"></param>
+    /// <returns></returns>
+    public bool ResetPreviousPuzzle(string SavedPuzzleID)
+    {
+        //Carico il playerpref
+        string stringLoad = PlayerPrefs.GetString(SavedPuzzleID, "Nope");
+        if (stringLoad.Contains("Nope"))
+            return false;
+
+        //Converto la stringa da json a PieceSaveClass
+        DataToJson = (PieceSaveClass)JsonUtility.FromJson(stringLoad, typeof(PieceSaveClass));
+        foreach (PuzzlePiece p in InstantiatedPieces)
+        {
+            //Imposto la poszione dei pezzi in base al loro spriteID
+            PieceSaveDatasClass data = DataToJson.SaveDatas.Where(piece => piece.SpriteID == p.data.SpriteID).First();
+            if (data != null)
+            {
+                p.transform.position = data.Position;
+                p.data.ActualPosition = data.ActualPosition;
+                if (p.data.InvisiblePice)
+                {
+                    InvisiblePieceSpriteRenderer = p.gameObject.GetComponent<SpriteRenderer>();
+                    InvisibleSprite = InvisiblePieceSpriteRenderer.sprite;
+                    InvisiblePieceSpriteRenderer.sprite = null;
+                }
+            }
+        }
+        Debug.Log("Fatto");
+        return true;
     }
 
     /// <summary>
@@ -198,3 +264,42 @@ public class PuzzleGenerator : MonoBehaviour
         InvisiblePieceSpriteRenderer.sprite = InvisibleSprite;
     }
 }
+
+#region JSON Datas
+/// <summary>
+/// Classe che contiene la lista di dati da salvare
+/// </summary>
+[Serializable]
+public class PieceSaveClass
+{
+    [SerializeField]
+    public List<PieceSaveDatasClass> SaveDatas = new List<PieceSaveDatasClass>();
+
+    public void SetPuzzleData(List<PuzzlePiece> Puzzle)
+    {
+        SaveDatas.Clear();
+        foreach (PuzzlePiece p in Puzzle)
+        {
+            SaveDatas.Add(new PieceSaveDatasClass(p.data.ActualPosition, p.transform.position, p.data.SpriteID));
+        }
+    }
+}
+
+/// <summary>
+/// Classe di cui è composta la lista di dati da salvare
+/// </summary>
+[Serializable]
+public class PieceSaveDatasClass
+{
+    public Coordinates ActualPosition;
+    public Vector3 Position;
+    public int SpriteID;
+
+    public PieceSaveDatasClass(Coordinates _actualPosition, Vector3 _Position, int _SpriteID)
+    {
+        ActualPosition = _actualPosition;
+        Position = _Position;
+        SpriteID = _SpriteID;
+    }
+}
+#endregion
