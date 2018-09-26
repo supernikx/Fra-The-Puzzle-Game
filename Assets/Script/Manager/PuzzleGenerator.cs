@@ -62,16 +62,6 @@ public class PuzzleGenerator : MonoBehaviour
         EventManager.EndLevel -= ShowLastPiece;
     }
 
-    [SerializeField]
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SavePuzzleStatus();
-        }
-    }
-
     /// <summary>
     /// Funzione che istanzia il nuovo puzzle
     /// </summary>
@@ -262,6 +252,15 @@ public class PuzzleGenerator : MonoBehaviour
     private void ShowLastPiece()
     {
         InvisiblePieceSpriteRenderer.sprite = InvisibleSprite;
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            GameManager.instance.ui.ToggleMenu(MenuType.PauseMenu);
+            SavePuzzleStatus();
+        }
     }
 }
 
