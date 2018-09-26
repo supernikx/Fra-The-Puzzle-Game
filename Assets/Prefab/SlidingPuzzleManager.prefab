@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528414668028458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.101, y: 3.748, z: 0.1}
+  m_LocalPosition: {x: -2.1094, y: 3.3199, z: 0}
   m_LocalScale: {x: 0.52, y: 0.52, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4821265008887042}
@@ -122,7 +122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1802882765456554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2504, y: 4.0012, z: 0.1}
+  m_LocalPosition: {x: -2.248, y: 3.5843997, z: 0}
   m_LocalScale: {x: 0.52, y: 0.52, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4821265008887042}
@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1105354354769522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8712552, y: 3.3331218, z: 0.1}
+  m_LocalPosition: {x: -1.875, y: 2.9213, z: 0}
   m_LocalScale: {x: 0.52, y: 0.52, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4821265008887042}
@@ -200,7 +200,7 @@ MonoBehaviour:
     DifficultyParent: {fileID: 4792383011852772}
     PuzzleDimension:
       X: 360
-      Y: 640
+      Y: 610
     PuzzleSize:
       X: 3
       Y: 3
@@ -208,7 +208,7 @@ MonoBehaviour:
     DifficultyParent: {fileID: 4057303192937606}
     PuzzleDimension:
       X: 270
-      Y: 480
+      Y: 460
     PuzzleSize:
       X: 4
       Y: 4
@@ -216,7 +216,7 @@ MonoBehaviour:
     DifficultyParent: {fileID: 4413125414575930}
     PuzzleDimension:
       X: 216
-      Y: 384
+      Y: 368
     PuzzleSize:
       X: 5
       Y: 5
@@ -232,5 +232,6 @@ MonoBehaviour:
     type: 2}
   PuzzleParent: {fileID: 4695716247488336}
   SelectedPuzzle: {fileID: 0}
+  DifficultySelected: 0
   InstantiatedPieces: []
   CanGenerate: 0
