@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public DifficultyManager dm;
     [HideInInspector]
     public PuzzleScriptable PlayingPuzzle;
+    [HideInInspector]
+    public Difficulty DifficultySelected;
 	[HideInInspector]
 	public GalleryManager galleryManager;
 
@@ -102,8 +104,17 @@ public class GameManager : MonoBehaviour
     public void StartGame(PuzzleScriptable _PuzzleToPlay, Difficulty _DifficultySelected)
     {
         PlayingPuzzle = _PuzzleToPlay;
+        DifficultySelected = _DifficultySelected;
+        ui.PauseMng.LoadPuzzleSprite(PlayingPuzzle);
         gen.GeneratePuzzle(_PuzzleToPlay, _DifficultySelected);
         LevelEnded = false;
+    }
+
+    public void RestartGame()
+    {
+        gen.DestroyPuzzle();
+        PlayerPrefs.DeleteKey(PlayingPuzzle.name + DifficultySelected.ToString());
+        gen.GeneratePuzzle(PlayingPuzzle, DifficultySelected);
     }
 
     /// <summary>

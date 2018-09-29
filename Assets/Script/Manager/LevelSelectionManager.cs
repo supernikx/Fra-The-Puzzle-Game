@@ -48,7 +48,8 @@ public class LevelSelectionManager : MonoBehaviour
         {
             InstantiatedLevels[LastLevelUnlocked - 1].CompletePuzzle(PuzzleList[LastLevelUnlocked - 1].DefaulImage);
             LastLevelUnlocked++;
-            InstantiatedLevels[LastLevelUnlocked - 1].UnlockPuzzle();
+            if (LastLevelUnlocked < InstantiatedLevels.Count - 1)
+                InstantiatedLevels[LastLevelUnlocked - 1].UnlockPuzzle();
             PlayerPrefs.SetInt("LastLevelUnlocked", LastLevelUnlocked);
         }
     }

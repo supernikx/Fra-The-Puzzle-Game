@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject WinScreen;
     public GameObject DifficultySelectionPanel;
 	public GameObject Gallery;
-    public Animator PauseMenu;
+    public UiPauseManager PauseMng;
 
     MenuType ActiveMenu = MenuType.MainMenu;
 
@@ -38,7 +38,10 @@ public class UIManager : MonoBehaviour
         DisableAllMenus();
         ActiveMenu = _type;
         if (_type == MenuType.None)
+        {
+            PauseMng.EnableArrow(true);
             return;
+        }
         switch (_type)
         {
             case MenuType.MainMenu:
@@ -52,7 +55,7 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
             case MenuType.PauseMenu:
-                PauseMenu.GetComponent<Animator>().SetTrigger("Pause");
+                PauseMng.EnableArrow(true);
                 if (EventManager.Pause != null)
                     EventManager.Pause();
                 break;
@@ -97,7 +100,6 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
             case (int)MenuType.PauseMenu:
-                PauseMenu.GetComponent<Animator>().SetTrigger("Pause");
                 if (EventManager.Pause != null)
                     EventManager.Pause();
                 break;
@@ -110,7 +112,8 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
 			case (int)MenuType.Gallery:
-				Gallery.SetActive(true);
+                PauseMng.EnableUpperCosina(false);
+                Gallery.SetActive(true);
 				AudioManager.instance.TogglePlayVolume(false);
 				AudioManager.instance.ToggleMenuVolume(true);
 				break;
@@ -138,9 +141,11 @@ public class UIManager : MonoBehaviour
         WinScreen.SetActive(false);
         DifficultySelectionPanel.SetActive(false);
 		Gallery.SetActive (false);
+        PauseMng.EnableArrow(false);
+        PauseMng.EnableUpperCosina(true);
+
         if (GetActiveMenu() == MenuType.PauseMenu)
         {
-            PauseMenu.SetTrigger("UnPause");
             if (EventManager.UnPause != null)
                 EventManager.UnPause();
         }
