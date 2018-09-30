@@ -254,7 +254,27 @@ public class GameManager : MonoBehaviour
         Debug.Log("Livello Completato");
         LevelEnded = true;        
         lvl.UnlockNextPuzzle(PlayingPuzzle);
+		switch (DifficultySelected) {
+		case Difficulty.Easy:
+			PlayingPuzzle.easyCompleted = true;
+			break;
+		case Difficulty.Normal:
+			PlayingPuzzle.normalCompleted = true;
+			break;
+		case Difficulty.Hard:
+			PlayingPuzzle.hardCompleted = true;
+			break;
+		}
         PlayingPuzzle = null;
         DifficultySelected = null;
     }
+
+	/*public void ResetData(){
+		PlayerPrefs.SetInt ("LastLevelUnlocked", 1);
+		foreach (var item in lvl.PuzzleList) {
+			item.easyCompleted = false;
+			item.normalCompleted = false;
+			item.hardCompleted = false;
+		}
+	}*/
 }

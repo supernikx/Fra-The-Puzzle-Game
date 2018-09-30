@@ -4,9 +4,11 @@ using TMPro;
 
 public class DifficultyManager : MonoBehaviour {
 
+	public Button PlayButton;
+	public Button WinGuyButton;
+
 	[Header("Images")]
 	public Image PuzzleToPlayImage;
-	public Image WinGuyImage;
 	public Image EasyStar;
 	public Image NormalStar;
 	public Image HardStar;
@@ -48,16 +50,41 @@ public class DifficultyManager : MonoBehaviour {
 			EasyStar.sprite = FilledStar;
 			NormalStar.sprite = EmptyStar;
 			HardStar.sprite = EmptyStar;
+
+			if (selectedPuzzle.easyCompleted) {
+				PlayButton.gameObject.SetActive (false);
+				WinGuyButton.gameObject.SetActive (true);
+			} else {
+				PlayButton.gameObject.SetActive (true);
+				WinGuyButton.gameObject.SetActive (false);
+			}
+				
 			break;
 		case (int)Difficulty.Normal:
 			EasyStar.sprite = FilledStar;
 			NormalStar.sprite = FilledStar;
 			HardStar.sprite = EmptyStar;
+
+			if (selectedPuzzle.normalCompleted) {
+				PlayButton.gameObject.SetActive (false);
+				WinGuyButton.gameObject.SetActive (true);
+			} else {
+				PlayButton.gameObject.SetActive (true);
+				WinGuyButton.gameObject.SetActive (false);
+			}
 			break;
 		case (int)Difficulty.Hard:
 			EasyStar.sprite = FilledStar;
 			NormalStar.sprite = FilledStar;
 			HardStar.sprite = FilledStar;
+
+			if (selectedPuzzle.hardCompleted) {
+				PlayButton.gameObject.SetActive (false);
+				WinGuyButton.gameObject.SetActive (true);
+			} else {
+				PlayButton.gameObject.SetActive (true);
+				WinGuyButton.gameObject.SetActive (false);
+			}
 			break;
 		default:
 			break;
