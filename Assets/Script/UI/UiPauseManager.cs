@@ -13,6 +13,11 @@ public class UiPauseManager : MonoBehaviour
     [SerializeField]
     GameObject UpperCosina;
 
+    UIManager ui;
+    [SerializeField]
+    float SwipeResistence;
+    Vector3 TouchInitialPosition;
+
     private void OnEnable()
     {
         EventManager.Pause += EnablePause;
@@ -25,8 +30,12 @@ public class UiPauseManager : MonoBehaviour
     }
 
     private void Awake()
-    {
+    {        
         anim = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        ui = GameManager.instance.ui;
     }
 
     /// <summary>
@@ -81,9 +90,9 @@ public class UiPauseManager : MonoBehaviour
     /// </summary>
     public void ExitButton()
     {
+        GameManager.instance.gen.SavePuzzleStatus();
         GameManager.instance.gen.DestroyPuzzle();
         GameManager.instance.ui.ToggleMenu(MenuType.MainMenu);
-
     }
 
     /// <summary>
@@ -95,4 +104,49 @@ public class UiPauseManager : MonoBehaviour
         if (EventManager.UnPause != null)
             EventManager.UnPause();
     }
+
+    #region Input
+    /// <summary>
+    /// Funzione che registra la posizione in cui è iniziato il drag
+    /// </summary>
+    public void BeginDrag()
+    {
+        if (ui.GetActiveMenu() == MenuType.None || ui.GetActiveMenu() == MenuType.PauseMenu)
+        {
+            TouchInitialPosition = Input.mousePosition;
+        }
+        else
+        {
+            Debug.Log("Non puoi mettere in pausa ora");
+        }
+    }
+
+    /// <summary>
+    /// Funzione che controlla se è stato eseguito un drag e la direzione verso cui è stato eseguito
+    /// </summary>
+    public void EndDrag()
+    {
+        if (ui.GetActiveMenu() == MenuType.None || ui.GetActiveMenu() == MenuType.PauseMenu)
+        {
+            Vector2 deltaSwipe = TouchInitialPosition - Input.mousePosition;
+            if (Mathf.Abs(deltaSwipe.y) > SwipeResistence)
+            {
+                if (deltaSwipe.y < 0)
+                {
+                    if (ui.GetActiveMenu() == MenuType.PauseMenu)
+                    {
+                        ui.ToggleMenu(MenuType.None);
+                    }
+                }
+                else
+                {
+                    if (ui.GetActiveMenu() == MenuType.None)
+                    {
+                        ui.ToggleMenu(MenuType.PauseMenu);
+                    }
+                }
+            }
+        }
+    }
+    #endregion
 }

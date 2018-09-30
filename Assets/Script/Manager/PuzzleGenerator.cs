@@ -179,11 +179,14 @@ public class PuzzleGenerator : MonoBehaviour
     /// </summary>
     public void SavePuzzleStatus()
     {
-        //Imposto il puzzle da salvare
-        DataToJson.SetPuzzleData(InstantiatedPieces);
+        if (GameManager.instance.PlayingPuzzle != null)
+        {
+            //Imposto il puzzle da salvare
+            DataToJson.SetPuzzleData(InstantiatedPieces);
 
-        //Salvo il puzzle in una stringa Json nel playerpref dell'ID del puzzle attuale
-        PlayerPrefs.SetString(SelectedPuzzle.name + DifficultySelected.ToString(), JsonUtility.ToJson(DataToJson));
+            //Salvo il puzzle in una stringa Json nel playerpref dell'ID del puzzle attuale
+            PlayerPrefs.SetString(SelectedPuzzle.name + DifficultySelected.ToString(), JsonUtility.ToJson(DataToJson));
+        }
     }
 
     /// <summary>
@@ -258,7 +261,6 @@ public class PuzzleGenerator : MonoBehaviour
     {
         if (pause)
         {
-            GameManager.instance.ui.ToggleMenu(MenuType.PauseMenu);
             SavePuzzleStatus();
         }
     }

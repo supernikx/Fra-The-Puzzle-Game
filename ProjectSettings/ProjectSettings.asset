@@ -243,8 +243,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/super/Documents/Unity Projects/PuzzleFraDesign/Keystore/keystore.keystore
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/super/Documents/Unity Projects/PuzzleFraDesign/Keystore/UncannyValley.keystore
+  AndroidKeyaliasName: fra! the puzzle game
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

@@ -18,13 +18,14 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public PuzzleScriptable PlayingPuzzle;
     [HideInInspector]
-    public Difficulty DifficultySelected;
+    public Difficulty? DifficultySelected;
 	[HideInInspector]
 	public GalleryManager galleryManager;
 
     bool LevelEnded;
     bool Moving;
     bool Pause;
+    bool Playing;
 
     private void OnEnable()
     {
@@ -87,6 +88,9 @@ public class GameManager : MonoBehaviour
                 case MenuType.Gallery:
                     ui.ToggleMenu(MenuType.MainMenu);
                     break;
+                case MenuType.Tutorial:
+                    ui.ToggleMenu(MenuType.MainMenu);
+                    break;
                 case MenuType.None:
                     ui.ToggleMenu(MenuType.PauseMenu);
                     break;
@@ -110,11 +114,14 @@ public class GameManager : MonoBehaviour
         LevelEnded = false;
     }
 
+    /// <summary>
+    /// Funzione che Restarta il puzzle con le stesse impostazioni
+    /// </summary>
     public void RestartGame()
     {
         gen.DestroyPuzzle();
         PlayerPrefs.DeleteKey(PlayingPuzzle.name + DifficultySelected.ToString());
-        gen.GeneratePuzzle(PlayingPuzzle, DifficultySelected);
+        gen.GeneratePuzzle(PlayingPuzzle, DifficultySelected.Value);
     }
 
     /// <summary>
@@ -247,5 +254,6 @@ public class GameManager : MonoBehaviour
         LevelEnded = true;        
         lvl.UnlockNextPuzzle(PlayingPuzzle);
         PlayingPuzzle = null;
+        DifficultySelected = null;
     }
 }

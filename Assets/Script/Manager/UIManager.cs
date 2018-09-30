@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject DifficultySelectionPanel;
 	public GameObject Gallery;
     public UiPauseManager PauseMng;
+    public GameObject TutorialMenu;
 
     MenuType ActiveMenu = MenuType.MainMenu;
 
@@ -45,6 +46,8 @@ public class UIManager : MonoBehaviour
         switch (_type)
         {
             case MenuType.MainMenu:
+                GameManager.instance.PlayingPuzzle = null;
+                GameManager.instance.DifficultySelected = null;
                 MainMenu.SetActive(true);
                 AudioManager.instance.TogglePlayVolume(false);
                 AudioManager.instance.ToggleMenuVolume(true);
@@ -68,10 +71,17 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
 			case MenuType.Gallery:
-				Gallery.SetActive(true);
+                PauseMng.EnableUpperCosina(false);
+                Gallery.SetActive(true);
 				AudioManager.instance.TogglePlayVolume(false);
 				AudioManager.instance.ToggleMenuVolume(true);
 				break;
+            case MenuType.Tutorial:
+                PauseMng.EnableUpperCosina(false);
+                TutorialMenu.SetActive(true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
+                break;
             default:
                 break;
         }
@@ -90,6 +100,8 @@ public class UIManager : MonoBehaviour
         switch (_typeIndex)
         {
             case (int)MenuType.MainMenu:
+                GameManager.instance.PlayingPuzzle = null;
+                GameManager.instance.DifficultySelected = null;
                 MainMenu.SetActive(true);
                 AudioManager.instance.TogglePlayVolume(false);
                 AudioManager.instance.ToggleMenuVolume(true);
@@ -117,6 +129,12 @@ public class UIManager : MonoBehaviour
 				AudioManager.instance.TogglePlayVolume(false);
 				AudioManager.instance.ToggleMenuVolume(true);
 				break;
+            case (int)MenuType.Tutorial:
+                PauseMng.EnableUpperCosina(false);
+                TutorialMenu.SetActive(true);
+                AudioManager.instance.TogglePlayVolume(false);
+                AudioManager.instance.ToggleMenuVolume(true);
+                break;
             default:
                 break;
         }
@@ -143,6 +161,7 @@ public class UIManager : MonoBehaviour
 		Gallery.SetActive (false);
         PauseMng.EnableArrow(false);
         PauseMng.EnableUpperCosina(true);
+        TutorialMenu.SetActive(false);
 
         if (GetActiveMenu() == MenuType.PauseMenu)
         {
@@ -168,49 +187,6 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         ToggleMenu(MenuType.WinScreen);
     }
-
-    #region Pause Menu
-    [SerializeField]
-    float PauseMenuSwipeResistence;
-
-    Vector3 TouchInitialPosition;
-    public void PauseMenuBeginDrag()
-    {
-        if (GetActiveMenu() == MenuType.None || GetActiveMenu() == MenuType.PauseMenu)
-        {
-            TouchInitialPosition = Input.mousePosition;
-        }
-        else
-        {
-            Debug.Log("Non puoi mettere in pausa ora");
-        }
-    }
-
-    public void PauseMenuEndDrag()
-    {
-        if (GetActiveMenu() == MenuType.None || GetActiveMenu() == MenuType.PauseMenu)
-        {
-            Vector2 deltaSwipe = TouchInitialPosition - Input.mousePosition;
-            if (Mathf.Abs(deltaSwipe.y) > PauseMenuSwipeResistence)
-            {
-                if (deltaSwipe.y < 0)
-                {
-                    if (GetActiveMenu() == MenuType.PauseMenu)
-                    {
-                        ToggleMenu(MenuType.None);
-                    }
-                }
-                else
-                {
-                    if (GetActiveMenu() == MenuType.None)
-                    {                        
-                        ToggleMenu(MenuType.PauseMenu);
-                    }
-                }
-            }
-        }
-    }
-    #endregion
 }
 
 public enum MenuType
@@ -221,5 +197,6 @@ public enum MenuType
     WinScreen = 3,
     PauseMenu = 4,
     DifficultyMenu = 5,
-	Gallery = 6
+	Gallery = 6,
+    Tutorial = 7,
 }
