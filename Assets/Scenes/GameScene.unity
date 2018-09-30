@@ -658,6 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dd712b7bed10408c97159461e0fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MuteToggle: {fileID: 387630117}
   audioMixer: {fileID: 24100000, guid: 3a5240383d527ad4daa5ed8d497e57db, type: 2}
   sounds:
   - clip: {fileID: 8300000, guid: 5ecc41eefb6ce144a8371a579235f711, type: 3}

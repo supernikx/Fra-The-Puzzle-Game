@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         ui.Init();
         lvl.Init();
 		galleryManager.Init ();
+		AudioManager.instance.Init ();
         Moving = false;
     }
 

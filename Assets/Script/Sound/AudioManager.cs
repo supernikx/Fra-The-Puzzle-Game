@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 using System;
 
 public class AudioManager : MonoBehaviour {
 
+	public Toggle MuteToggle;
 	public AudioMixer audioMixer;
     public Sound[] sounds;
 
     public static AudioManager instance;
 
-    public void Awake()
+    void Awake()
     {
         if (instance == null)
             instance = this;
@@ -35,6 +37,16 @@ public class AudioManager : MonoBehaviour {
     }
 
     #region API
+
+	public void Init(){
+		if (PlayerPrefs.GetInt ("MasterVolumeToggle", 1) == 1) {
+			ToggleMasterVolume (true);
+			MuteToggle.isOn = true;
+		} else if (PlayerPrefs.GetInt ("MasterVolumeToggle", 1) == 0) {
+			ToggleMasterVolume (false);
+			MuteToggle.isOn = false;
+		}
+	}
 
     public void Play(string soundName)
     {
@@ -68,8 +80,10 @@ public class AudioManager : MonoBehaviour {
 	{
 		if (!_value) {
 			audioMixer.SetFloat ("MasterGroupVolume", -80f);
+			PlayerPrefs.SetInt ("MasterVolumeToggle", 0);
 		} else {
 			audioMixer.SetFloat ("MasterGroupVolume", 0f);
+			PlayerPrefs.SetInt ("MasterVolumeToggle", 1);
 		}
 	}
 
