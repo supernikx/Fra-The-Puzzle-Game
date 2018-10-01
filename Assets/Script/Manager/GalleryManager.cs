@@ -17,7 +17,7 @@ public class GalleryManager : MonoBehaviour {
 			else
 				instantiatedGalleryImage.sprite = GameManager.instance.lvl.PuzzleList [i].OverlayImage;
 			instantiatedGalleryImage.SetNativeSize ();
-			//GalleryImages.Add (instantiatedGalleryImage);
+			GalleryImages.Add (instantiatedGalleryImage);
 		}
 	}
 

@@ -265,6 +265,7 @@ public class GameManager : MonoBehaviour
 			PlayingPuzzle.hardCompleted = true;
 			break;
 		}
+		galleryManager.Refresh ();
         PlayingPuzzle = null;
         DifficultySelected = null;
     }
