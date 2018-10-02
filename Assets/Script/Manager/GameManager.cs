@@ -245,7 +245,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PayPalButton()
     {
-        Debug.Log("Manca Link Paypal");
+        Application.OpenURL("https://www.paypal.me/UncannyValleyMI");        
     }
 
     /// <summary>
