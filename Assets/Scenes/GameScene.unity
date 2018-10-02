@@ -2838,8 +2838,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6eb5b3bf13d55f047a36744a9a576166, type: 3}
   - {fileID: 21300000, guid: d3dd5cd15e6d06743b597d52c81e0633, type: 3}
   - {fileID: 21300000, guid: 7e4fa62f5834e7649b9e66cfc805fb7f, type: 3}
-  SwipeResistence: 350
-  SwipeSpeed: 2000
+  SwipeResistence: 300
+  SwipeSpeed: 2500
 --- !u!114 &970153347
 MonoBehaviour:
   m_ObjectHideFlags: 0

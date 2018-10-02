@@ -266,6 +266,7 @@ public class GameManager : MonoBehaviour
 			break;
 		}
 		galleryManager.Refresh ();
+        PlayerPrefs.DeleteKey(PlayingPuzzle.name + DifficultySelected.ToString());
         PlayingPuzzle = null;
         DifficultySelected = null;
     }
