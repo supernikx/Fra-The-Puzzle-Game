@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     public PuzzleScriptable PlayingPuzzle;
     [HideInInspector]
     public Difficulty? DifficultySelected;
-	[HideInInspector]
-	public GalleryManager galleryManager;
+    [HideInInspector]
+    public GalleryManager galleryManager;
 
     bool LevelEnded;
     bool Moving;
@@ -47,17 +47,17 @@ public class GameManager : MonoBehaviour
         ui = FindObjectOfType<UIManager>();
         lvl = FindObjectOfType<LevelSelectionManager>();
         dm = FindObjectOfType<DifficultyManager>();
-		galleryManager = FindObjectOfType<GalleryManager> ();
+        galleryManager = FindObjectOfType<GalleryManager>();
     }
 
     private void Start()
     {
-		AudioManager.instance.Play ("MenuTheme");
-		AudioManager.instance.Play ("PlayTheme");
+        AudioManager.instance.Play("MenuTheme");
+        AudioManager.instance.Play("PlayTheme");
         ui.Init();
         lvl.Init();
-		galleryManager.Init ();
-		AudioManager.instance.Init ();
+        galleryManager.Init();
+        AudioManager.instance.Init();
         Moving = false;
     }
 
@@ -67,12 +67,6 @@ public class GameManager : MonoBehaviour
         {
             switch (ui.GetActiveMenu())
             {
-                case MenuType.MainMenu:
-                    Application.Quit();
-                    break;
-                case MenuType.LevelSelection:
-                    ui.ToggleMenu(MenuType.MainMenu);
-                    break;
                 case MenuType.WinScreen:
                     if (LevelEnded)
                     {
@@ -86,10 +80,10 @@ public class GameManager : MonoBehaviour
                 case MenuType.DifficultyMenu:
                     ui.ToggleMenu(MenuType.LevelSelection);
                     break;
+                case MenuType.LevelSelection:
                 case MenuType.Gallery:
-                    ui.ToggleMenu(MenuType.MainMenu);
-                    break;
                 case MenuType.Tutorial:
+                case MenuType.PayPal:
                     ui.ToggleMenu(MenuType.MainMenu);
                     break;
                 case MenuType.None:
@@ -245,6 +239,14 @@ public class GameManager : MonoBehaviour
     {
         Application.OpenURL("https://www.instagram.com/fradesign.it/");
     }
+    
+    /// <summary>
+    /// Funzione che apre nel browser la pagina di donazioni di paypal
+    /// </summary>
+    public void PayPalButton()
+    {
+        Debug.Log("Manca Link Paypal");
+    }
 
     /// <summary>
     /// Funzione che viene chiamata quando il gioco finisce
@@ -252,26 +254,27 @@ public class GameManager : MonoBehaviour
     private void EndLevel()
     {
         Debug.Log("Livello Completato");
-        LevelEnded = true;        
+        LevelEnded = true;
         lvl.UnlockNextPuzzle(PlayingPuzzle);
-		switch (DifficultySelected) {
-		case Difficulty.Easy:
-			PlayingPuzzle.easyCompleted = true;
-			break;
-		case Difficulty.Normal:
-			PlayingPuzzle.normalCompleted = true;
-			break;
-		case Difficulty.Hard:
-			PlayingPuzzle.hardCompleted = true;
-			break;
-		}
-		galleryManager.Refresh ();
+        switch (DifficultySelected)
+        {
+            case Difficulty.Easy:
+                PlayingPuzzle.easyCompleted = true;
+                break;
+            case Difficulty.Normal:
+                PlayingPuzzle.normalCompleted = true;
+                break;
+            case Difficulty.Hard:
+                PlayingPuzzle.hardCompleted = true;
+                break;
+        }
+        galleryManager.Refresh();
         PlayerPrefs.DeleteKey(PlayingPuzzle.name + DifficultySelected.ToString());
         PlayingPuzzle = null;
         DifficultySelected = null;
     }
 
-	/*public void ResetData(){
+    /*public void ResetData(){
 		PlayerPrefs.SetInt ("LastLevelUnlocked", 1);
 		foreach (var item in lvl.PuzzleList) {
 			item.easyCompleted = false;
