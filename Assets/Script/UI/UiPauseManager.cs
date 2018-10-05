@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class UiPauseManager : MonoBehaviour
 {
     Animator anim;
+	[SerializeField]
+	Button PauseButton;
     [SerializeField]
     GameObject ArrowImage;
     [SerializeField]
@@ -17,6 +19,7 @@ public class UiPauseManager : MonoBehaviour
     [SerializeField]
     float SwipeResistence;
     Vector3 TouchInitialPosition;
+	bool paused = false;
 
     private void OnEnable()
     {
@@ -45,6 +48,7 @@ public class UiPauseManager : MonoBehaviour
     {
         anim.SetTrigger("Pause");
         ArrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+		paused = true;
     }
 
     /// <summary>
@@ -54,7 +58,15 @@ public class UiPauseManager : MonoBehaviour
     {
         ArrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
         anim.SetTrigger("UnPause");
+		paused = false;
     }
+
+	public void TogglePause(){
+		if (paused)
+			DisablePause ();
+		else
+			EnablePause ();
+	}
 
     /// <summary>
     /// Funzione che abilita/disabilita la freccia
@@ -65,6 +77,7 @@ public class UiPauseManager : MonoBehaviour
         if (_enable)
             ArrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
         ArrowImage.SetActive(_enable);
+		PauseButton.enabled = _enable;
     }
 
     /// <summary>
