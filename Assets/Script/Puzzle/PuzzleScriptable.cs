@@ -9,8 +9,4 @@ public class PuzzleScriptable : ScriptableObject {
     public Sprite OverlayImage;
     public Texture2D Puzzle;
     public int PuzzleID;
-
-	public bool easyCompleted = false;
-	public bool normalCompleted = false;
-	public bool hardCompleted = false;
 }

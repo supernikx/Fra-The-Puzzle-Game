@@ -256,18 +256,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Livello Completato");
         LevelEnded = true;
         lvl.UnlockNextPuzzle(PlayingPuzzle);
-        switch (DifficultySelected)
-        {
-            case Difficulty.Easy:
-                PlayingPuzzle.easyCompleted = true;
-                break;
-            case Difficulty.Normal:
-                PlayingPuzzle.normalCompleted = true;
-                break;
-            case Difficulty.Hard:
-                PlayingPuzzle.hardCompleted = true;
-                break;
-        }
+		//chiavi es."0Easy1"
+		//1 se completato 0 nel caso contrario
+		PlayerPrefs.SetInt (PlayingPuzzle.PuzzleID.ToString () + DifficultySelected.ToString () + "status", 1);
         galleryManager.Refresh();
         PlayerPrefs.DeleteKey(PlayingPuzzle.name + DifficultySelected.ToString());
         PlayingPuzzle = null;
@@ -276,10 +267,10 @@ public class GameManager : MonoBehaviour
 
     /*public void ResetData(){
 		PlayerPrefs.SetInt ("LastLevelUnlocked", 1);
-		foreach (var item in lvl.PuzzleList) {
-			item.easyCompleted = false;
-			item.normalCompleted = false;
-			item.hardCompleted = false;
+		foreach (var puzzle in lvl.PuzzleList) {
+			PlayerPrefs.SetInt (puzzle.PuzzleID.ToString () + Difficulty.Easy.ToString () + "status", 0);
+			PlayerPrefs.SetInt (puzzle.PuzzleID.ToString () + Difficulty.Normal.ToString () + "status", 0);
+			PlayerPrefs.SetInt (puzzle.PuzzleID.ToString () + Difficulty.Hard.ToString () + "status", 0);
 		}
 	}*/
 }
