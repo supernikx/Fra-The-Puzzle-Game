@@ -103,6 +103,7 @@ public class UiPauseManager : MonoBehaviour
     /// </summary>
     public void ExitButton()
     {
+		anim.SetTrigger ("UnPause");
         GameManager.instance.gen.SavePuzzleStatus();
         GameManager.instance.gen.DestroyPuzzle();
         GameManager.instance.ui.ToggleMenu(MenuType.MainMenu);

@@ -125,6 +125,7 @@ PlayerSettings:
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
   xboxOneEnable7thCore: 0
+  isWsaHolographicRemotingEnabled: 0
   vrSettings:
     cardboard:
       depthFormat: 0
@@ -243,7 +244,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/super/Documents/Unity Projects/PuzzleFraDesign/Keystore/UncannyValley.keystore
+  AndroidKeystoreName: C:/Users/march/Documents/Source Tree Projects/FraDesignPuzzle/Keystore/UncannyValley.keystore
   AndroidKeyaliasName: fra the puzzle game
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
