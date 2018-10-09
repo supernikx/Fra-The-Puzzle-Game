@@ -19,7 +19,6 @@ public class UiPauseManager : MonoBehaviour
     [SerializeField]
     float SwipeResistence;
     Vector3 TouchInitialPosition;
-	bool paused = false;
 
     private void OnEnable()
     {
@@ -39,6 +38,7 @@ public class UiPauseManager : MonoBehaviour
     private void Start()
     {
         ui = GameManager.instance.ui;
+        UpperCosina.GetComponent<Button>().onClick.AddListener(() => EventManager.Pause());
     }
 
     /// <summary>
@@ -48,7 +48,8 @@ public class UiPauseManager : MonoBehaviour
     {
         anim.SetTrigger("Pause");
         ArrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-		paused = true;
+        UpperCosina.GetComponent<Button>().onClick.RemoveAllListeners();
+        UpperCosina.GetComponent<Button>().onClick.AddListener(() => EventManager.UnPause());
     }
 
     /// <summary>
@@ -58,15 +59,9 @@ public class UiPauseManager : MonoBehaviour
     {
         ArrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
         anim.SetTrigger("UnPause");
-		paused = false;
+        UpperCosina.GetComponent<Button>().onClick.RemoveAllListeners();
+        UpperCosina.GetComponent<Button>().onClick.AddListener(() => EventManager.Pause());
     }
-
-	public void TogglePause(){
-		if (paused)
-			DisablePause ();
-		else
-			EnablePause ();
-	}
 
     /// <summary>
     /// Funzione che abilita/disabilita la freccia
@@ -103,7 +98,7 @@ public class UiPauseManager : MonoBehaviour
     /// </summary>
     public void ExitButton()
     {
-		anim.SetTrigger ("UnPause");
+        EventManager.UnPause();
         GameManager.instance.gen.SavePuzzleStatus();
         GameManager.instance.gen.DestroyPuzzle();
         GameManager.instance.ui.ToggleMenu(MenuType.MainMenu);

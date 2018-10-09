@@ -249,6 +249,15 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Funzione che apre l'url richiesto
+    /// </summary>
+    /// <param name="url"></param>
+    public void OpenURL(string url)
+    {
+        Application.OpenURL(url);
+    }
+
+    /// <summary>
     /// Funzione che viene chiamata quando il gioco finisce
     /// </summary>
     private void EndLevel()
