@@ -412,10 +412,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.26814646, y: 0.64574456}
-  m_AnchorMax: {x: 0.7494876, y: 0.6625028}
-  m_AnchoredPosition: {x: -4.199997, y: 3.2999878}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.25887865, y: 0.652511}
+  m_AnchorMax: {x: 0.7448536, y: 0.671}
+  m_AnchoredPosition: {x: -2.0136108, y: 2.130005}
+  m_SizeDelta: {x: -4, y: -7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &52905684
 MonoBehaviour:
@@ -968,10 +968,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.35512143, y: 0.6645468}
-  m_AnchorMax: {x: 0.64580536, y: 0.6822336}
-  m_AnchoredPosition: {x: 0.30004883, y: 1}
-  m_SizeDelta: {x: -0.6000366, y: -8.400024}
+  m_AnchorMin: {x: 0.35614645, y: 0.669}
+  m_AnchorMax: {x: 0.65314645, y: 0.68651104}
+  m_AnchoredPosition: {x: 0.9412999, y: 3}
+  m_SizeDelta: {x: -7.6000366, y: -8.400024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252320050
 MonoBehaviour:
@@ -1138,14 +1138,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1897680587}
-        m_MethodName: InstagramButton
-        m_Mode: 1
+        m_MethodName: OpenURL
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: https://www.instagram.com/fradesign.it/
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1827,10 +1827,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.36531606, y: 0.363}
-  m_AnchorMax: {x: 0.64580536, y: 0.38084614}
-  m_AnchoredPosition: {x: -0.098098755, y: 2.7000122}
-  m_SizeDelta: {x: 0.30400085, y: -7.200012}
+  m_AnchorMin: {x: 0.36078036, y: 0.37436542}
+  m_AnchorMax: {x: 0.64400005, y: 0.39115387}
+  m_AnchoredPosition: {x: 1.7773743, y: -0.30004883}
+  m_SizeDelta: {x: 4.0721, y: -0.59991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491929210
 MonoBehaviour:
@@ -2929,10 +2929,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.30800003, y: 0.24000001}
-  m_AnchorMax: {x: 0.70041436, y: 0.25955492}
-  m_AnchoredPosition: {x: 1.300003, y: 0.79992676}
-  m_SizeDelta: {x: 6.6920013, y: -8.099998}
+  m_AnchorMin: {x: 0.30800003, y: 0.252511}
+  m_AnchorMax: {x: 0.70041436, y: 0.2677665}
+  m_AnchoredPosition: {x: -0.1305542, y: 2.2000122}
+  m_SizeDelta: {x: 6.9531, y: -0.099998474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766377970
 MonoBehaviour:
@@ -3266,10 +3266,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.32000002, y: 0.34723353}
-  m_AnchorMax: {x: 0.70041436, y: 0.363}
-  m_AnchoredPosition: {x: -5.199997, y: 6.049988}
-  m_SizeDelta: {x: 19.900002, y: 0.80000305}
+  m_AnchorMin: {x: 0.30058575, y: 0.35727748}
+  m_AnchorMax: {x: 0.70041436, y: 0.37436542}
+  m_AnchoredPosition: {x: 3.8428955, y: 1.5839844}
+  m_SizeDelta: {x: -1.0999985, y: -4.199997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812134763
 MonoBehaviour:
@@ -3388,10 +3388,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.33658576, y: 0.2562335}
-  m_AnchorMax: {x: 0.669, y: 0.27600002}
-  m_AnchoredPosition: {x: 5.6133995, y: 6}
-  m_SizeDelta: {x: -5.248001, y: -6.100006}
+  m_AnchorMin: {x: 0.34600002, y: 0.2677665}
+  m_AnchorMax: {x: 0.66700006, y: 0.2867445}
+  m_AnchoredPosition: {x: 1, y: 1}
+  m_SizeDelta: {x: -4.5, y: -4.0999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826512180
 MonoBehaviour:
@@ -4309,14 +4309,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1897680587}
-        m_MethodName: PayPalButton
-        m_Mode: 1
+        m_MethodName: OpenURL
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: https://www.paypal.me/Pushagames
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4367,7 +4367,7 @@ GameObject:
   - component: {fileID: 1082503287}
   - component: {fileID: 1082503286}
   m_Layer: 5
-  m_Name: uvalley_instagram
+  m_Name: pushagames_instagram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4386,10 +4386,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.35512143, y: 0.809}
-  m_AnchorMax: {x: 0.64580536, y: 0.8247446}
-  m_AnchoredPosition: {x: -0.3000946, y: -0.099975586}
-  m_SizeDelta: {x: -0.6000061, y: -0.4000244}
+  m_AnchorMin: {x: 0.33658576, y: 0.81476647}
+  m_AnchorMax: {x: 0.6773411, y: 0.8312555}
+  m_AnchoredPosition: {x: 0.1478424, y: -1}
+  m_SizeDelta: {x: -2.2957, y: 1.4000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1082503286
 MonoBehaviour:
@@ -4438,7 +4438,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: https://www.instagram.com/uvalley.mi/?hl=it
+          m_StringArgument: https://www.instagram.com/pushagames/?hl=it
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -5658,10 +5658,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.38663393, y: 0.457533}
-  m_AnchorMax: {x: 0.63000005, y: 0.47346705}
-  m_AnchoredPosition: {x: 1.4999695, y: 7.5}
-  m_SizeDelta: {x: -7.5, y: -7.899994}
+  m_AnchorMin: {x: 0.38663393, y: 0.4677885}
+  m_AnchorMax: {x: 0.62814647, y: 0.4832555}
+  m_AnchoredPosition: {x: 0.9999695, y: 2.5}
+  m_SizeDelta: {x: -5.5, y: -4.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606553695
 MonoBehaviour:
@@ -6141,8 +6141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5, y: -1957}
-  m_SizeDelta: {x: 1079, y: 3914}
+  m_AnchoredPosition: {x: 555.2, y: -1957}
+  m_SizeDelta: {x: 1110.4, y: 3914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817476497
 MonoBehaviour:
@@ -6163,9 +6163,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f988c447ebe68134680c2961c36199f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11f99cc951e4ac34b83954d7e6767784, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6212,7 +6212,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000000059604645}
-  m_SizeDelta: {x: -4, y: 3914}
+  m_SizeDelta: {x: 27.400024, y: 3914}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1820758897
 MonoBehaviour:
@@ -6684,10 +6684,10 @@ RectTransform:
   m_Father: {fileID: 1817476496}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.19685358, y: 0.5682555}
-  m_AnchorMax: {x: 0.8226589, y: 0.5872116}
-  m_AnchoredPosition: {x: -1.8999939, y: 0.1000061}
-  m_SizeDelta: {x: 9.300003, y: 0.7000122}
+  m_AnchorMin: {x: 0.18014644, y: 0.57527745}
+  m_AnchorMax: {x: 0.8198785, y: 0.5937665}
+  m_AnchoredPosition: {x: -0.027008057, y: 1}
+  m_SizeDelta: {x: -5.699997, y: 2.7000122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924518550
 MonoBehaviour:

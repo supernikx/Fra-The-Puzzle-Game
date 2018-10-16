@@ -233,22 +233,6 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Funzione che apre nel browser la pagina instagram
-    /// </summary>
-    public void InstagramButton()
-    {
-        Application.OpenURL("https://www.instagram.com/fradesign.it/");
-    }
-    
-    /// <summary>
-    /// Funzione che apre nel browser la pagina di donazioni di paypal
-    /// </summary>
-    public void PayPalButton()
-    {
-        Application.OpenURL("https://www.paypal.me/UncannyValleyMI");        
-    }
-
-    /// <summary>
     /// Funzione che apre l'url richiesto
     /// </summary>
     /// <param name="url"></param>
