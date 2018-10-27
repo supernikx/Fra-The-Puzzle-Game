@@ -38,7 +38,7 @@ public class UiPauseManager : MonoBehaviour
     private void Start()
     {
         ui = GameManager.instance.ui;
-        UpperCosina.GetComponent<Button>().onClick.AddListener(() => EventManager.Pause());
+        UpperCosina.GetComponent<Button>().onClick.AddListener(() => ui.ToggleMenu(MenuType.PauseMenu));
     }
 
     /// <summary>
@@ -49,7 +49,7 @@ public class UiPauseManager : MonoBehaviour
         anim.SetTrigger("Pause");
         ArrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         UpperCosina.GetComponent<Button>().onClick.RemoveAllListeners();
-        UpperCosina.GetComponent<Button>().onClick.AddListener(() => EventManager.UnPause());
+        UpperCosina.GetComponent<Button>().onClick.AddListener(() => ui.ToggleMenu(MenuType.None));
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ public class UiPauseManager : MonoBehaviour
         ArrowImage.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
         anim.SetTrigger("UnPause");
         UpperCosina.GetComponent<Button>().onClick.RemoveAllListeners();
-        UpperCosina.GetComponent<Button>().onClick.AddListener(() => EventManager.Pause());
+        UpperCosina.GetComponent<Button>().onClick.AddListener(() => ui.ToggleMenu(MenuType.PauseMenu));
     }
 
     /// <summary>
