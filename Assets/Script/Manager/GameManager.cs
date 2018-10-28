@@ -81,11 +81,10 @@ public class GameManager : MonoBehaviour
                     ui.ToggleMenu(MenuType.LevelSelection);
                     break;
                 case MenuType.LevelSelection:
-                case MenuType.Gallery:
-                case MenuType.Tutorial:
-                case MenuType.PayPal:
                     ui.ToggleMenu(MenuType.MainMenu);
                     break;
+                case MenuType.Gallery:
+                case MenuType.Tutorial:
                 case MenuType.None:
                     ui.ToggleMenu(MenuType.PauseMenu);
                     break;

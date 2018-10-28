@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
 	public GameObject Gallery;
     public UiPauseManager PauseMng;
     public GameObject TutorialMenu;
-    public GameObject PayPalMenu;
 
     MenuType ActiveMenu = MenuType.MainMenu;
 
@@ -83,12 +82,6 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.TogglePlayVolume(false);
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
-            case MenuType.PayPal:
-                PauseMng.EnableUpperCosina(false);
-                PayPalMenu.SetActive(true);
-                AudioManager.instance.TogglePlayVolume(false);
-                AudioManager.instance.ToggleMenuVolume(true);
-                break;
             default:
                 break;
         }
@@ -142,12 +135,6 @@ public class UIManager : MonoBehaviour
                 AudioManager.instance.TogglePlayVolume(false);
                 AudioManager.instance.ToggleMenuVolume(true);
                 break;
-            case (int)MenuType.PayPal:
-                PauseMng.EnableUpperCosina(false);
-                PayPalMenu.SetActive(true);
-                AudioManager.instance.TogglePlayVolume(false);
-                AudioManager.instance.ToggleMenuVolume(true);
-                break;
             default:
                 break;
         }
@@ -175,7 +162,6 @@ public class UIManager : MonoBehaviour
         PauseMng.EnableArrow(false);
         PauseMng.EnableUpperCosina(true);
         TutorialMenu.SetActive(false);
-        PayPalMenu.SetActive(false);
 
         if (GetActiveMenu() == MenuType.PauseMenu)
         {
@@ -213,5 +199,4 @@ public enum MenuType
     DifficultyMenu = 5,
 	Gallery = 6,
     Tutorial = 7,
-    PayPal = 8,
 }
