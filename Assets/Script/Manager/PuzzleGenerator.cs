@@ -146,7 +146,6 @@ public class PuzzleGenerator : MonoBehaviour
             GameManager.instance.ui.ToggleMenu(MenuType.None);
             AudioManager.instance.ToggleMenuVolume(false);
             AudioManager.instance.TogglePlayVolume(true);
-
         }
     }
 

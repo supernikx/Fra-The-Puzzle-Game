@@ -68,11 +68,7 @@ public class GameManager : MonoBehaviour
             switch (ui.GetActiveMenu())
             {
                 case MenuType.WinScreen:
-                    if (LevelEnded)
-                    {
-                        ui.ToggleMenu(MenuType.LevelSelection);
-                        gen.DestroyPuzzle();
-                    }
+                    WinScreenButton();
                     break;
                 case MenuType.PauseMenu:
                     ui.ToggleMenu(MenuType.None);
@@ -94,6 +90,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             if (EventManager.EndLevel != null)
                 EventManager.EndLevel();
+    }
+
+    public void WinScreenButton()
+    {
+        if (LevelEnded)
+        {
+            ui.ToggleMenu(MenuType.LevelSelection);
+            gen.DestroyPuzzle();
+        }
     }
 
     /// <summary>
